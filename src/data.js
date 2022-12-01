@@ -4,6 +4,25 @@ import slider3 from "./img/slide-lebron-3.png"
 import categorie from "./img/nike.png"
 import product from "./img/produto.png"
 
+export const links = [
+  {
+    name: "Início",
+    href: "/"
+  },
+  {
+    name: "Produtos",
+    href: "/produtos"
+  },
+  {
+    name: "Sobre Nós",
+    href: "/"
+  },
+  {
+    name: "Marcas",
+    href: "/"
+  },
+]
+
 export const sliderItems = [ 
     {
         id: 1,
