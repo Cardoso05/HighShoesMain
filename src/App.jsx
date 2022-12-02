@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Product from "./pages/Product";
 import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
+import Cart from "./pages/Cart";
 
 import HeaderSkeleton from "./components/header/skeleton"
 const Header = lazy(() => import("./components/header"))
