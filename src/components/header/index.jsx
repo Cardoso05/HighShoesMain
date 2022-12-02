@@ -1,11 +1,11 @@
 import { Layout } from "./layout"
 
-import { links } from "../../data"
+import { header_links } from "../../data"
 
 export default function Header() {
   return (
     <Layout
-      links={links}
+      links={header_links}
       loading={false}
     />
   )

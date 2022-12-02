@@ -4,7 +4,7 @@ import slider3 from "./img/slide-lebron-3.png"
 import categorie from "./img/nike.png"
 import product from "./img/produto.png"
 
-export const links = [
+export const header_links = [
   {
     name: "Início",
     href: "/"
@@ -15,13 +15,68 @@ export const links = [
   },
   {
     name: "Sobre Nós",
-    href: "/"
+    href: "/sobre"
   },
   {
     name: "Marcas",
-    href: "/"
+    href: "/marcas"
   },
 ]
+
+export const footer_sections = [
+    {
+        title: "Contato",
+        links: [
+            {
+                name: "highshoes@fakemail.com",
+                href: "mailto:highshoes@fakemail.com"
+            },
+            {
+                name: "11 9999-9999",
+                href: "tel:1199999999"
+            }
+        ]
+    },
+    {
+        title: "Informação",
+        links: [
+            {
+                name: "Sobre nós",
+                href: "/sobre"
+            },
+            {
+                name: "Promoções",
+                href: "/promocoes"
+            },
+            {
+                name: "Produtos",
+                href: "/produtos"
+            }
+        ]
+    },
+    {
+        title: "Ajuda",
+        links: [
+            {
+                name: "Serviços",
+                href: "/servicos"
+            },
+            {
+                name: "Suporte whatsapp",
+                href: "/whatsapp"
+            },
+            {
+                name: "Suporte e-mail",
+                href: "/email"
+            },
+            {
+                name: "Termos",
+                href: "termos"
+            }
+        ]
+    }
+]
+
 
 export const sliderItems = [ 
     {

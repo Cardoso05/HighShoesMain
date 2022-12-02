@@ -11,16 +11,23 @@ import Register from "./pages/Register";
 import Cart from "./pages/Cart";
 
 import HeaderSkeleton from "./components/header/skeleton"
+import FooterSkeleton from "./components/footer/skeleton"
+
 const Header = lazy(() => import("./components/header"))
+const Footer = lazy(() => import("./components/footer"))
 
 const App = () => {
   return (
-    <SkeletonTheme baseColor="#d2d2d2" highlightColor="#ffffff">
+    <SkeletonTheme baseColor="#222222" highlightColor="#464646">
       <Suspense fallback={<HeaderSkeleton />}>
         <Header />
       </Suspense>
-      
+
       <Login/>
+
+      <Suspense fallback={<FooterSkeleton />}>
+        <Footer />
+      </Suspense>
     </SkeletonTheme>
   )
 };

@@ -82,21 +82,33 @@ export const Layout = ({ links = Array.from({ length: 4 }).map(() => ({name: "",
       </Navigation>
       
       <Actions>
-        <button style={{ width: "28px", height: "20px" }}>
-          <img src={BrazilFlag} />
-        </button>
-        
-        <IconLink href="/search">
-          <Icons.Search />
-        </IconLink>
+        {loading
+          ? <Skeleton width={24} height={24} />
+          : <button style={{ width: "28px", height: "20px" }}>
+              <img src={BrazilFlag} />
+            </button>
+        }
 
-        <IconLink href="/cart">
-          <Icons.ShoppingCart />
-        </IconLink>
+        {loading
+          ? <Skeleton width={24} height={24} />
+          : <IconLink href="/search">
+              <Icons.Search />
+            </IconLink>
+        }
 
-        <IconLink href="/profile">
-          <Icons.User />
-        </IconLink>
+        {loading
+          ? <Skeleton width={24} height={24} />
+          : <IconLink href="/cart">
+              <Icons.ShoppingCart />
+            </IconLink>
+        }
+
+        {loading
+          ? <Skeleton width={24} height={24} />
+          : <IconLink href="/profile">
+              <Icons.User />
+            </IconLink>
+        }
       </Actions>
     </Container>
   )
