@@ -1,8 +1,6 @@
 import { Add, Remove } from "@material-ui/icons"
 import styled from "styled-components"
 import Announcement from "../components/Announcement"
-import Footer from "../components/Fotter"
-import Navbar from "../components/Navbar"
 import Newsletter from "../components/Newsletter"
 import product from "../img/produto.png"
 
@@ -100,7 +98,6 @@ const Button = styled.button`
 const Product = () => {
   return (
         <Container>
-            <Navbar/>
             <Announcement/>
             <Wrapper>
                 <ImgContainer>
@@ -141,7 +138,6 @@ const Product = () => {
                 </AddContainer>
             </Wrapper>
             <Newsletter/>
-            <Footer/>
         </Container>
     )
 }

@@ -1,69 +1,87 @@
 import styled from "styled-components"
+import { ArrowRight } from "@material-ui/icons"
 
-const Container = styled.div`
-    width: 100vw;
-    height: 100vh;
-    background-color: gray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`;
+import { Button } from "../components/button"
+import { Input } from "../components/input"
 
-const Wrapper = styled.div`
-    width: 40%;
-    padding: 20px;
-    background-color: white;
-`;
+const Wrapper = styled.main`
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+`
+
+const Container = styled.section`
+  background: #1A1A1A;
+
+  width: 600px;
+  margin: auto;
+
+  padding: 50px;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
 
 const Form = styled.form`
-    display: flex;
-    flex-wrap: wrap;
-`;
+  width: 200px;
 
-const Title = styled.h1`
-    font-size: 24px;
-    font-weight: 300;
-`;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+`
 
-const Input = styled.input`
-    flex: 1;
-    min-width: 40%;
-    margin: 20px 10px 0px 0px;
-    padding: 10px;
-`;
+const GradientCircle = styled.div`
+  --size: 200px;
+  width: var(--size);
+  height: var(--size);
+  background: linear-gradient(140.86deg, #BFE8FF, #1DA6F2);
 
-const Agreement = styled.span`
-    font-size: 12px;
-    margin: 20px 0px;
-`;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+`
 
-const Button = styled.button`
-    width: 40%;
-    border: none;
-    padding: 15px 20px;
-    background-color: teal;
-    color: white;
-    cursor: pointer;
-`;
-
-const Register = () => {
+export default function Login() {
   return (
-    <Container>
-        <Wrapper>
-            <Title>CREATE AN ACCOUNT</Title>
-            <Form>
-                <Input placeholder="name"/>
-                <Input placeholder="last name"/>
-                <Input placeholder="username"/>
-                <Input placeholder="email"/>
-                <Input placeholder="password"/>
-                <Input placeholder="confirm password"/>
-                <Agreement>By creating an account, I consent to the processing of my personal data in accordance with the <b>PRIVACY POLICY</b></Agreement>
-                <Button>CREATE</Button>
-            </Form>
-        </Wrapper>
-    </Container>
+    <Wrapper>
+      <Container>
+        <GradientCircle>
+          <UserCheck />
+        </GradientCircle>
+
+        <Form>
+          <h1 style={{ fontSize: "20px" }}>Crie sua conta</h1>
+          <Input type="text" placeholder="Nome" />
+          <Input type="text" placeholder="E-mail" />
+          <Input type="password" placeholder="Senha" />
+          <Button>
+            <strong style={{ lineHeight: "11px" }}>CRIAR CONTA</strong> <ArrowRight />
+          </Button>
+        </Form>
+      </Container>
+    </Wrapper>
   )
 }
 
-export default Register
+function UserCheck() {
+  return (
+    <svg width="123" height="122" viewBox="0 0 123 122" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clipPath="url(#clip0_233_1090)">
+        <path d="M82.0349 106.75V96.5833C82.0349 91.1906 79.8927 86.0187 76.0794 82.2055C72.2662 78.3923 67.0943 76.25 61.7016 76.25H26.1182C20.7255 76.25 15.5536 78.3923 11.7404 82.2055C7.92717 86.0187 5.78491 91.1906 5.78491 96.5833V106.75" stroke="white" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M43.91 55.9167C55.1398 55.9167 64.2433 46.8131 64.2433 35.5833C64.2433 24.3535 55.1398 15.25 43.91 15.25C32.6802 15.25 23.5767 24.3535 23.5767 35.5833C23.5767 46.8131 32.6802 55.9167 43.91 55.9167Z" stroke="white" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M87.1184 55.9167L97.2851 66.0833L117.618 45.75" stroke="white" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round"/>
+      </g>
+
+      <defs>
+        <clipPath id="clip0_233_1090">
+          <rect width="122" height="122" fill="white" transform="translate(0.70166)"/>
+        </clipPath>
+      </defs>
+    </svg>
+  )
+}

@@ -1,14 +1,22 @@
 import styled from "styled-components"
+import { useLocation } from 'react-router-dom';
 
 import Logo from "./highshoes-logo.png"
 import BrazilFlag from "./flags/brazil.png"
 
 import Skeleton from "react-loading-skeleton"
 
-const Container = styled.header`
-  position: sticky;
-  top: 0px;
+const Wrapper = styled.header`
+  width: 100%;
 
+  position: fixed;
+  top: 0px;
+  z-index: 999;
+
+  background: #222222;
+`
+
+const Container = styled.div`
   max-width: 800px;
   width: 100%;
   margin: auto;
@@ -54,63 +62,67 @@ const Icons = {
 }
 
 export const Layout = ({ links = Array.from({ length: 4 }).map(() => ({name: "", href: ""})), loading = true }) => {
+  const { pathname } = useLocation()
+
   return (
-    <Container>
-      <a href="/" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-        {loading
-          ? <Skeleton width={100} />
-          : <img
-              style={{ width: "115px", height: "21px" }}
-              src={Logo}
-              alt="" 
-            />
-        }
-      </a>
+    <Wrapper>
+      <Container>
+        <a href="/" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+          {loading
+            ? <Skeleton width={100} />
+            : <img
+                style={{ width: "115px", height: "21px" }}
+                src={Logo}
+                alt="" 
+              />
+          }
+        </a>
 
-      <Navigation>
-        <ul>
-          {links.map(({ name, href }, index) => loading ? (
-            <li key={index}>
-              <Skeleton width={60} />
-            </li>
-          ) : (
-            <li key={href}>
-              <a href={href}>{name}</a>
-            </li>
-          ))}
-        </ul>
-      </Navigation>
-      
-      <Actions>
-        {loading
-          ? <Skeleton width={24} height={24} />
-          : <button style={{ width: "28px", height: "20px" }}>
-              <img src={BrazilFlag} />
-            </button>
-        }
+        <Navigation>
+          <ul>
+            {links.map(({ name, href }, index) => loading ? (
+              <li key={index}>
+                <Skeleton width={60} />
+              </li>
+            ) : (
+              <li key={href}>
+                <a href={href} style={{fontWeight: pathname === href ? "bold" : "regular"}}>{name}</a>
+              </li>
+            ))}
+          </ul>
+        </Navigation>
+        
+        <Actions>
+          {loading
+            ? <Skeleton width={24} height={24} />
+            : <button style={{ width: "28px", height: "20px" }}>
+                <img src={BrazilFlag} />
+              </button>
+          }
 
-        {loading
-          ? <Skeleton width={24} height={24} />
-          : <IconLink href="/search">
-              <Icons.Search />
-            </IconLink>
-        }
+          {loading
+            ? <Skeleton width={24} height={24} />
+            : <IconLink href="/search">
+                <Icons.Search />
+              </IconLink>
+          }
 
-        {loading
-          ? <Skeleton width={24} height={24} />
-          : <IconLink href="/cart">
-              <Icons.ShoppingCart />
-            </IconLink>
-        }
+          {loading
+            ? <Skeleton width={24} height={24} />
+            : <IconLink href="/cart">
+                <Icons.ShoppingCart />
+              </IconLink>
+          }
 
-        {loading
-          ? <Skeleton width={24} height={24} />
-          : <IconLink href="/profile">
-              <Icons.User />
-            </IconLink>
-        }
-      </Actions>
-    </Container>
+          {loading
+            ? <Skeleton width={24} height={24} />
+            : <IconLink href="/profile">
+                <Icons.User />
+              </IconLink>
+          }
+        </Actions>
+      </Container>
+    </Wrapper>
   )
 }
 

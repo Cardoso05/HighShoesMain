@@ -2,8 +2,6 @@ import { Add, Remove } from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
 import Announcement from '../components/Announcement'
-import Footer from '../components/Fotter'
-import Navbar from '../components/Navbar'
 import product from "../img/produto.png"
 
 const Container = styled.div``
@@ -132,7 +130,6 @@ const Cart = () => {
   return (
 
     <Container>
-        <Navbar/>
         <Announcement/>
         <Wrapper>
             <Title>Your Bag</Title>
@@ -208,7 +205,6 @@ const Cart = () => {
                 </Summary>
             </Bottom>
         </Wrapper>
-        <Footer/>
     </Container>
 
     )

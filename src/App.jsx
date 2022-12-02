@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { SkeletonTheme } from "react-loading-skeleton"
 
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -10,6 +11,8 @@ import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
 import Cart from "./pages/Cart";
 
+import NotFound from "./pages/Not-found"
+
 import HeaderSkeleton from "./components/header/skeleton"
 import FooterSkeleton from "./components/footer/skeleton"
 
@@ -19,15 +22,26 @@ const Footer = lazy(() => import("./components/footer"))
 const App = () => {
   return (
     <SkeletonTheme baseColor="#222222" highlightColor="#464646">
-      <Suspense fallback={<HeaderSkeleton />}>
-        <Header />
-      </Suspense>
+      <BrowserRouter>
+        <Suspense fallback={<HeaderSkeleton />}>
+          <Header />
+        </Suspense>
 
-      <Login/>
+        <Routes>
+          <Route path="*" element={<NotFound />} />
+          
+          <Route path="/" element={<Home />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/product-list" element={<ProductList />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/registro" element={<Register />} />
+        </Routes>
 
-      <Suspense fallback={<FooterSkeleton />}>
-        <Footer />
-      </Suspense>
+        <Suspense fallback={<FooterSkeleton />}>
+          <Footer />
+        </Suspense>
+      </BrowserRouter>
     </SkeletonTheme>
   )
 };
