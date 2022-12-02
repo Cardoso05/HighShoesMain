@@ -1,7 +1,6 @@
 import { Add, Remove } from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
-import Announcement from '../components/Announcement'
 import product from "../img/produto.png"
 
 const Container = styled.div``
@@ -130,7 +129,6 @@ const Cart = () => {
   return (
 
     <Container>
-        <Announcement/>
         <Wrapper>
             <Title>Your Bag</Title>
             <Top>

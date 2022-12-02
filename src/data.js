@@ -77,7 +77,6 @@ export const footer_sections = [
     }
 ]
 
-
 export const sliderItems = [ 
     {
         id: 1,
@@ -101,6 +100,30 @@ export const sliderItems = [
         bg: "f5fafd",
     },
 ]
+
+export const brands = [
+    {
+        id: 1,
+        img: categorie,
+        name: "Nike"
+    },
+    {
+        id: 2,
+        img: categorie,
+        name: "Nike"
+    },
+    {
+        id: 3,
+        img: categorie,
+        name: "Nike"
+    },
+    {
+        id: 4,
+        img: categorie,
+        name: "Nike"
+    },
+]
+
 export const categories = [
     {
         id: 1,
@@ -116,6 +139,33 @@ export const categories = [
         id: 3,
         img: categorie,
         title: "SHIRT/CLOTHES",
+    },
+]
+
+export const newProducts = [
+    {
+        id: 1,
+        name: "tênis chinês nik",
+        price: 599.99,
+        img: product,
+    },
+    {
+        id: 2,
+        name: "tênis chinês nik",
+        price: 599.99,
+        img: product,
+    },
+    {
+        id: 3,
+        name: "tênis chinês nik",
+        price: 599.99,
+        img: product,
+    },
+    {
+        id: 4,
+        name: "tênis chinês nik",
+        price: 599.99,
+        img: product,
     },
 ]
 
@@ -154,3 +204,29 @@ export const popularProducts = [
     }
 ]
  
+export const faq = [
+    {
+        title: "Em quantos dias meus pedidos chegam?",
+        description: "Nosso frete entrega em até 15 dias."
+    },
+    {
+        title: "Em quantos dias meus pedidos chegam?",
+        description: "Nosso frete entrega em até 15 dias."
+    },
+    {
+        title: "Em quantos dias meus pedidos chegam?",
+        description: "Nosso frete entrega em até 15 dias."
+    },
+    {
+        title: "Em quantos dias meus pedidos chegam?",
+        description: "Nosso frete entrega em até 15 dias."
+    },
+    {
+        title: "Em quantos dias meus pedidos chegam?",
+        description: "Nosso frete entrega em até 15 dias."
+    },
+    {
+        title: "Em quantos dias meus pedidos chegam?",
+        description: "Nosso frete entrega em até 15 dias."
+    },
+]

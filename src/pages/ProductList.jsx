@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import Announcement from "../components/Announcement"
 import Products from "../components/Products"
 import Newsletter from "../components/Newsletter"
 
@@ -29,7 +28,6 @@ const Option = styled.option``
 const ProductList = () => {
   return (
         <Container>
-            <Announcement/>
             <Title>Dresses</Title>
             <FilterContainer>
                 <Filter>

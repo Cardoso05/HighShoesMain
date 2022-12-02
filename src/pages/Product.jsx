@@ -1,6 +1,5 @@
 import { Add, Remove } from "@material-ui/icons"
 import styled from "styled-components"
-import Announcement from "../components/Announcement"
 import Newsletter from "../components/Newsletter"
 import product from "../img/produto.png"
 
@@ -98,7 +97,6 @@ const Button = styled.button`
 const Product = () => {
   return (
         <Container>
-            <Announcement/>
             <Wrapper>
                 <ImgContainer>
                     <Image src={product}/>

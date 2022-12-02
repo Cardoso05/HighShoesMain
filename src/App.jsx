@@ -4,7 +4,7 @@ import { SkeletonTheme } from "react-loading-skeleton"
 
 import 'react-loading-skeleton/dist/skeleton.css'
 
-import Home from "./pages/Home";
+
 import Login from "./pages/Login";
 import Product from "./pages/Product";
 import ProductList from "./pages/ProductList";
@@ -16,8 +16,13 @@ import NotFound from "./pages/Not-found"
 import HeaderSkeleton from "./components/header/skeleton"
 import FooterSkeleton from "./components/footer/skeleton"
 
+import SkeletonHome from "./pages/home/layout";
+
 const Header = lazy(() => import("./components/header"))
 const Footer = lazy(() => import("./components/footer"))
+
+// pages
+const Home = lazy(() => import("./pages/home"))
 
 const App = () => {
   return (
@@ -30,7 +35,12 @@ const App = () => {
         <Routes>
           <Route path="*" element={<NotFound />} />
           
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={
+            <Suspense fallback={<SkeletonHome />}>
+              <Home />
+            </Suspense>
+          } />
+
           <Route path="/product" element={<Product />} />
           <Route path="/product-list" element={<ProductList />} />
           <Route path="/cart" element={<Cart />} />
