@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { useLocation } from 'react-router-dom';
 
 import Logo from "./highshoes-logo.png"
 import BrazilFlag from "./flags/brazil.png"
@@ -61,8 +60,8 @@ const Icons = {
   User
 }
 
-export const Layout = ({ links = Array.from({ length: 4 }).map(() => ({name: "", href: ""})), loading = true }) => {
-  const { pathname } = useLocation()
+export const Layout = ({ currentPage, links = Array.from({ length: 4 }).map(() => ({name: "", href: ""})), loading = true }) => {
+  
 
   return (
     <Wrapper>
@@ -86,7 +85,7 @@ export const Layout = ({ links = Array.from({ length: 4 }).map(() => ({name: "",
               </li>
             ) : (
               <li key={href}>
-                <a href={href} style={{fontWeight: pathname === href ? "bold" : "regular"}}>{name}</a>
+                <a href={href} style={{fontWeight: currentPage === href ? "bold" : "regular"}}>{name}</a>
               </li>
             ))}
           </ul>

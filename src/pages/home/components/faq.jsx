@@ -53,9 +53,9 @@ const Question = styled.details`
   }
 `
 
-export const FAQ = ({ questions }) => {
+export const FAQ = ({ questions, loading }) => {
   return (
-    <Section>
+    <Section loading={loading}>
       <ul
         style={{
           width: "100%",

@@ -1,7 +1,5 @@
 import styled from "styled-components"
 
-import { newProducts, brands, faq } from "../../data"
-
 import { Novidades } from "./components/novidades"
 import { Brands } from "./components/brands"
 import { Promotions } from "./components/promotions"
@@ -23,14 +21,14 @@ const Container = styled.main`
   padding: 30px 0;
 `
 
-export const Layout = ({ loading = true }) => {
+export const Layout = ({ loading = true, newProducts = [], brands = [], faq = [] }) => {
   return (
     <Container>
-      <Novidades products={newProducts} />
-      <Brands brands={brands} />
-      <Promotions />
-      <Products products={newProducts} />
-      <FAQ questions={faq} />
+      <Novidades loading={loading} products={newProducts} />
+      <Brands loading={loading} brands={brands} />
+      <Promotions loading={loading} />
+      <Products loading={loading} products={newProducts} />
+      <FAQ loading={loading} questions={faq} />
       {/* <Slider/>
       <Categories/>
       <Products/>

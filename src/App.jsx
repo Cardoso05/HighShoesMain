@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react"
+import { ErrorBoundary } from "react-error-boundary"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { SkeletonTheme } from "react-loading-skeleton"
 
@@ -6,7 +7,6 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 
 import Login from "./pages/Login";
-import Product from "./pages/Product";
 import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
 import Cart from "./pages/Cart";
@@ -17,12 +17,14 @@ import HeaderSkeleton from "./components/header/skeleton"
 import FooterSkeleton from "./components/footer/skeleton"
 
 import SkeletonHome from "./pages/home/layout";
+import SkeletonProduct from "./pages/product/layout";
 
 const Header = lazy(() => import("./components/header"))
 const Footer = lazy(() => import("./components/footer"))
 
 // pages
 const Home = lazy(() => import("./pages/home"))
+const Product = lazy(() => import("./pages/product"))
 
 const App = () => {
   return (
@@ -41,7 +43,23 @@ const App = () => {
             </Suspense>
           } />
 
-          <Route path="/product" element={<Product />} />
+            <Route path="/produto/:slug" element={
+              <ErrorBoundary FallbackComponent={({ error, resetErrorBoundary }) => (
+                <div>
+                  <h1>da</h1>
+                  <h1>da</h1>
+                  <h1>da</h1>
+                  <h1>da</h1>
+                  <h1>{error.message}</h1>
+                  <button onClick={() => resetErrorBoundary()}>reset</button>
+                </div>
+              )}>
+                <Suspense fallback={<SkeletonProduct />}>
+                  <Product />
+                </Suspense>
+              </ErrorBoundary>
+            } />
+
           <Route path="/product-list" element={<ProductList />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />

@@ -1,3 +1,4 @@
+import Skeleton from "react-loading-skeleton"
 import styled from "styled-components"
 
 import { slugify } from "../../../utils/slugify"
@@ -18,9 +19,9 @@ const Brand = styled.a`
   }
 `
 
-export const Brands = ({ brands }) => {
+export const Brands = ({ brands, loading = true }) => {
   return (
-    <Section title="Escolha uma marca">
+    <Section title="Escolha uma marca" loading={loading}>
       <ul
         style={{
           width: "100%",
@@ -31,9 +32,14 @@ export const Brands = ({ brands }) => {
       >
         {brands.map(({ id, img, name }) => (
           <li key={id}>
-            <Brand href={`/marcas/${slugify(name)}`}>
-              <img src={img} alt="" />
-            </Brand>
+              {loading
+                ? <Skeleton width={200} height={100} />
+                : (
+                  <Brand href={`/marcas/${slugify(name)}`}>
+                    <img src={img} alt="" />
+                  </Brand>
+                )}
+            
           </li>
         ))}
       </ul>

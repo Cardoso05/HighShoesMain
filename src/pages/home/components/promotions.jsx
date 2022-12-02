@@ -1,4 +1,5 @@
 import { ArrowRight } from "@material-ui/icons"
+import Skeleton from "react-loading-skeleton"
 import styled from "styled-components"
 
 import { Button } from "../../../components/button"
@@ -27,9 +28,9 @@ const Card = styled.a`
   }
 `
 
-export const Promotions = () => {
+export const Promotions = ({ loading = true }) => {
   return (
-    <Section title="HighPromoções">
+    <Section title="HighPromoções" loading={loading}>
       <ul
         style={{
           width: "100%",
@@ -40,23 +41,31 @@ export const Promotions = () => {
         }}
       >
         <li style={{ width: "50%" }}>
-          <Card href={`/produtos`}>
-            <strong>Calçado usado por desconto</strong>
+          {loading ? (
+            <Skeleton width={"100%"} height={100} />
+          ) : (
+            <Card href={"/produtos/desconto"}>
+              <strong>Calçado usado por desconto</strong>
 
-            <Button>
-              <ArrowRight width={24} height={24}  />
-            </Button>
-          </Card>
+              <Button>
+                <ArrowRight width={24} height={24}  />
+              </Button>
+            </Card>
+          )}
         </li>
 
         <li style={{ width: "50%" }}>
-          <Card href={`/produtos`}>
-            <strong>Calçado usado por desconto</strong>
+          {loading ? (
+            <Skeleton width={"100%"} height={100} />
+          ) : (
+            <Card href={"/produtos/desconto"}>
+              <strong>Calçado usado por desconto</strong>
 
-            <Button>
-              <ArrowRight width={24} height={24}  />
-            </Button>
-          </Card>
+              <Button>
+                <ArrowRight width={24} height={24}  />
+              </Button>
+            </Card>
+          )}
         </li>
       </ul>
     </Section>
