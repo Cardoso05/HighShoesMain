@@ -1,3 +1,4 @@
+import { forwardRef } from "react"
 import styled from "styled-components"
 
 const InputRoot = styled.input`
@@ -14,8 +15,6 @@ const InputRoot = styled.input`
   }
 `
 
-export const Input = ({...props}) => {
-  return (
-    <InputRoot {...props} />
-  )
-}
+export const Input = forwardRef(({ ...props }, ref) => (
+  <InputRoot ref={ref} {...props} />
+))

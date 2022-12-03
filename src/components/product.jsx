@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components"
+import { Link as RouterLink } from "react-router-dom"
 import { ArrowRight } from "@material-ui/icons"
 
 import { slugify } from "../utils/slugify"
@@ -28,7 +29,7 @@ const GoUpAnimation = keyframes`
   }
 `
 
-const ProductContainer = styled.a`
+const ProductContainer = styled(RouterLink)`
   width: 200px;
   height: 310px;
   padding: 18px;
@@ -89,10 +90,8 @@ export const Product = ({ img, name, price }) => {
     currency: "brl",
   })
 
-  
-
   return (
-    <ProductContainer href={`/produto/${slugify(name)}`}>
+    <ProductContainer to={`/produtos/${slugify(name)}`}>
       <img
         src={img}
         alt=""

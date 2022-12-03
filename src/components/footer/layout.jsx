@@ -1,4 +1,5 @@
 import Skeleton from "react-loading-skeleton"
+import { Link as RouterLink } from "react-router-dom"
 import styled from "styled-components"
 import Logo from "../../img/highshoes-logo.png"
 import { ArrowRight } from "@material-ui/icons"
@@ -39,7 +40,7 @@ const Title = styled.h3`
     color: #1DA6F2;
 `
 
-const Link = styled.a`
+const Link = styled(RouterLink)`
     font-size: 14px;
     color: #fff;
 `
@@ -64,9 +65,9 @@ export const Layout = ({ sections = dummySections, loading = true }) => {
             <Container>
                 {sections.map(({ title, links }, index) => loading ? (
                     <Column key={title}>
-                        <a href="/" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                        <RouterLink to="/" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                             <Skeleton width={100} />
-                        </a>
+                        </RouterLink>
 
                         <Skeleton width={randomInteger(80, 100)} />
 
@@ -77,19 +78,19 @@ export const Layout = ({ sections = dummySections, loading = true }) => {
                 ) : (
                     <Column key={title}>
                         {index === 0 && (
-                            <a href="/" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                            <RouterLink to="/" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                                 <img
                                     style={{ width: "115px", height: "21px" }}
                                     src={Logo}
                                     alt="" 
                                 />
-                            </a>
+                            </RouterLink>
                         )}
 
                         <Title>{title}</Title>
 
                         {links.map(({ name, href }) => (
-                            <Link key={href} href={href}>{name}</Link>
+                            <Link key={href} to={href}>{name}</Link>
                         ))}
                     </Column>
                 ))}

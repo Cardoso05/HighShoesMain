@@ -1,4 +1,6 @@
 import styled from "styled-components"
+import { Link as RouterLink, useLocation } from "react-router-dom"
+import { useCart } from "../../context/cart-store"
 
 import Logo from "./highshoes-logo.png"
 import BrazilFlag from "./flags/brazil.png"
@@ -48,10 +50,38 @@ const Actions = styled.section`
   gap: 20px;
 `
 
-const IconLink = styled.a`
+const IconLink = styled(RouterLink)`
   --size: 24px;
   width: var(--size);
   height: var(--size);
+
+  position: relative;
+
+  // for cart
+  div {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    display: grid;
+    place-items: center;
+
+    --size: 16px;
+    width: var(--size);
+    height: var(--size);
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: red;
+  }
+`
+
+const NavLink = styled(RouterLink)`
+  &[data-active="true"] {
+    font-weight: bold;
+  }
 `
 
 const Icons = {
@@ -60,13 +90,14 @@ const Icons = {
   User
 }
 
-export const Layout = ({ currentPage, links = Array.from({ length: 4 }).map(() => ({name: "", href: ""})), loading = true }) => {
-  
+export const Layout = ({ links = Array.from({ length: 4 }).map(() => ({name: "", to: ""})), loading = true }) => {
+  const { numItemsInCart } = useCart()
+  const { pathname: currentPage } = useLocation()
 
   return (
     <Wrapper>
       <Container>
-        <a href="/" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <RouterLink to="/" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
           {loading
             ? <Skeleton width={100} />
             : <img
@@ -75,7 +106,7 @@ export const Layout = ({ currentPage, links = Array.from({ length: 4 }).map(() =
                 alt="" 
               />
           }
-        </a>
+        </RouterLink>
 
         <Navigation>
           <ul>
@@ -85,7 +116,11 @@ export const Layout = ({ currentPage, links = Array.from({ length: 4 }).map(() =
               </li>
             ) : (
               <li key={href}>
-                <a href={href} style={{fontWeight: currentPage === href ? "bold" : "regular"}}>{name}</a>
+                <NavLink
+                  to={href}
+                  data-active={currentPage === href}>
+                    {name}
+                  </NavLink>
               </li>
             ))}
           </ul>
@@ -95,27 +130,28 @@ export const Layout = ({ currentPage, links = Array.from({ length: 4 }).map(() =
           {loading
             ? <Skeleton width={24} height={24} />
             : <button style={{ width: "28px", height: "20px" }}>
-                <img src={BrazilFlag} />
+                <img src={BrazilFlag} alt="" />
               </button>
           }
 
           {loading
             ? <Skeleton width={24} height={24} />
-            : <IconLink href="/search">
+            : <IconLink to="/search">
                 <Icons.Search />
               </IconLink>
           }
 
           {loading
             ? <Skeleton width={24} height={24} />
-            : <IconLink href="/cart">
+            : <IconLink to="/checkout">
                 <Icons.ShoppingCart />
+                {numItemsInCart > 0 && <div>{numItemsInCart > 9 ? "9+" : numItemsInCart}</div>}
               </IconLink>
           }
 
           {loading
             ? <Skeleton width={24} height={24} />
-            : <IconLink href="/profile">
+            : <IconLink to="/profile">
                 <Icons.User />
               </IconLink>
           }

@@ -147,33 +147,37 @@ export const newProducts = [
         id: 1,
         name: "tênis chinês nik",
         description: "lorem ipsum, lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsum,lorem ipsum, lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsum",
-        price: 599.99,
+        price: 600,
         sizes: ["36", "37", "38", "39", "40", "42"],
         img: product,
+        brandId: 1
     },
     {
         id: 2,
         name: "Nike sb Dunk Low “Cactus Jack”",
         description: "Descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição",
-        price: 11000,
+        price: 1100,
         sizes: ["36", "38", "40"],
         img: product,
+        brandId: 2
     },
     {
         id: 3,
         name: "tênis chinês nik",
         description: "lorem ipsum, lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsum,lorem ipsum, lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsum",
-        price: 599.99,
+        price: 799.99,
         sizes: ["36", "37", "38", "39", "40"],
         img: product,
+        brandId: 3
     },
     {
         id: 4,
         name: "tênis chinês nik",
         description: "lorem ipsum, lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsum,lorem ipsum, lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsum",
-        price: 599.99,
+        price: 999.99,
         sizes: ["36", "37", "38", "39", "40"],
         img: product,
+        brandId: 4
     },
 ]
 
@@ -214,26 +218,32 @@ export const popularProducts = [
  
 export const faq = [
     {
+        id: 0,
         title: "Em quantos dias meus pedidos chegam?",
         description: "Nosso frete entrega em até 15 dias."
     },
     {
+        id: 1,
         title: "Em quantos dias meus pedidos chegam?",
         description: "Nosso frete entrega em até 15 dias."
     },
     {
+        id: 2,
         title: "Em quantos dias meus pedidos chegam?",
         description: "Nosso frete entrega em até 15 dias."
     },
     {
+        id: 3,
         title: "Em quantos dias meus pedidos chegam?",
         description: "Nosso frete entrega em até 15 dias."
     },
     {
+        id: 4,
         title: "Em quantos dias meus pedidos chegam?",
         description: "Nosso frete entrega em até 15 dias."
     },
     {
+        id: 5,
         title: "Em quantos dias meus pedidos chegam?",
         description: "Nosso frete entrega em até 15 dias."
     },

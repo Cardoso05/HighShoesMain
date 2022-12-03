@@ -1,11 +1,12 @@
 import { ArrowRight } from "@material-ui/icons"
+import { Link as RouterLink } from "react-router-dom"
 import Skeleton from "react-loading-skeleton"
 import styled from "styled-components"
 
 import { Button } from "../../../components/button"
 import { Section } from "./section"
 
-const Card = styled.a`
+const Card = styled(RouterLink)`
   width: 100%;
   height: 100px;
   color: #000;
@@ -44,7 +45,7 @@ export const Promotions = ({ loading = true }) => {
           {loading ? (
             <Skeleton width={"100%"} height={100} />
           ) : (
-            <Card href={"/produtos/desconto"}>
+            <Card to={"/produtos/desconto"}>
               <strong>Calçado usado por desconto</strong>
 
               <Button>
@@ -58,7 +59,7 @@ export const Promotions = ({ loading = true }) => {
           {loading ? (
             <Skeleton width={"100%"} height={100} />
           ) : (
-            <Card href={"/produtos/desconto"}>
+            <Card to={"/produtos/desconto"}>
               <strong>Calçado usado por desconto</strong>
 
               <Button>

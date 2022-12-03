@@ -1,10 +1,11 @@
 import Skeleton from "react-loading-skeleton"
+import { Link as RouterLink } from "react-router-dom"
 import styled from "styled-components"
 
 import { slugify } from "../../../utils/slugify"
 import { Section } from "./section"
 
-const Brand = styled.a`
+const Brand = styled(RouterLink)`
   width: 200px;
   height: 100px;
   background: white;
@@ -35,7 +36,7 @@ export const Brands = ({ brands, loading = true }) => {
               {loading
                 ? <Skeleton width={200} height={100} />
                 : (
-                  <Brand href={`/marcas/${slugify(name)}`}>
+                  <Brand to={`/marcas/${slugify(name)}`}>
                     <img src={img} alt="" />
                   </Brand>
                 )}

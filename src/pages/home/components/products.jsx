@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link as RouterLink } from "react-router-dom"
 
 import { slugify } from "../../../utils/slugify"
 import { Button } from "../../../components/button"
@@ -6,7 +7,7 @@ import { Section } from "./section"
 import { ArrowRight } from "@material-ui/icons"
 import Skeleton from "react-loading-skeleton"
 
-const Image = styled.a`
+const Image = styled(RouterLink)`
   width: 220px;
 
   display: grid;
@@ -41,7 +42,7 @@ export const Products = ({ products, loading = true }) => {
             {loading ? (
               <Skeleton width={200} height={200} />
             ) : (
-              <Image href={`/marcas/${slugify(name)}`}>
+              <Image to={`/marcas/${slugify(name)}`}>
                 <img src={img} alt="" />
               </Image>
             )}
@@ -49,7 +50,7 @@ export const Products = ({ products, loading = true }) => {
         ))}
       </ul>
 
-      <Button as="a" href="/products" style={{ width: "max-content" }}>
+      <Button as={RouterLink} to="/products" style={{ width: "max-content" }}>
         Ver Produtos <ArrowRight />
       </Button>
     </Section>    

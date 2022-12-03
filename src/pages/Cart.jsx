@@ -1,7 +1,9 @@
-import { Add, Remove } from '@material-ui/icons'
-import React from 'react'
+import { useCart } from "../context/cart-store"
+import { newProducts } from "../data"
 import styled from 'styled-components'
-import product from "../img/produto.png"
+import { useEffect, useMemo, useState } from "react"
+import { Add, Remove } from "@material-ui/icons"
+import { Button } from "../components/button"
 
 const Container = styled.div``
 
@@ -10,38 +12,7 @@ const Wrapper = styled.div`
 `
 
 const Title = styled.h1`
-    font-weight: 300;
     text-align: center;
-`
-
-const Top = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-`
-const TopButton = styled.button`
-    padding: 10px;
-    font-weight: 600;
-    cursor: pointer;
-    border: ${props=>props.type === "filled" && "none"}; 
-    background-color: ${props=>props.type === "filled" ? "black" : "transparent"};
-    color: ${props=>props.type === "filled" && "white"};
-`
-const TopTexts = styled.div``
-
-const TopText = styled.span`
-    text-decoration: none;
-    cursor: pointer;
-    margin: 0px 10px;
-`
-
-const Bottom = styled.div`
-    display: flex;
-    justify-content: space-between;
-`
-const Info = styled.div`
-    flex: 3;
 `
 
 const Product = styled.div`
@@ -95,6 +66,15 @@ const ProductPrice = styled.div`
     font-size: 30px;
     font-weight: 200;
 `
+
+const Bottom = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
+const Info = styled.div`
+    flex: 3;
+`
+
 const Hr = styled.hr`
     background-color: #eee;
     border:none;
@@ -120,91 +100,110 @@ const SummaryItem = styled.div`
 
 const SummaryItemText = styled.span``
 const SummaryItemPrice = styled.span``
-const Button = styled.button`
-    width: 100%;
-    padding: 10px;
-
-`
 const Cart = () => {
-  return (
+    const { cart } = useCart()
+    const [estimatedShipping, setEstimatedShipping] = useState(0)
 
-    <Container>
-        <Wrapper>
-            <Title>Your Bag</Title>
-            <Top>
-                <TopButton type="filter">CONTINUE SHOPPING</TopButton>
-                <TopTexts>
-                    <TopText>Shopping Bag(2)</TopText>
-                    <TopText>Your WIshList(0)</TopText>
-                </TopTexts>
-                <TopButton type="filter">CHECKOUT NOW</TopButton>
-            </Top>
-            <Bottom>
-                <Info>
-                    <Product>
-                        <ProductDetail>
-                            <Image src={product}/>
-                            <Details>
-                                <ProductName><b>Product:</b> JESSIE THUNDER SHOES</ProductName>
-                                <ProductId><b>ID:</b> 9031290301</ProductId>
-                                <ProductColor color="black"/>
-                                <ProductSize><b>Size:</b> 37.5</ProductSize>
-                            </Details>
-                        </ProductDetail>
-                        <PriceDetail>
-                            <ProductAmountContainer>
-                                <Add/>
-                                <ProductAmount>2</ProductAmount>
-                                <Remove/>
-                            </ProductAmountContainer>
-                            <ProductPrice>$ 30</ProductPrice>
-                        </PriceDetail>
-                    </Product>
-                    <Hr/>
-                    <Product>
-                        <ProductDetail>
-                            <Image src={product}/>
-                            <Details>
-                                <ProductName><b>Product:</b> JESSIE THUNDER SHOES</ProductName>
-                                <ProductId><b>ID:</b> 9031290301</ProductId>
-                                <ProductColor color="black"/>
-                                <ProductSize><b>Size:</b> 37.5</ProductSize>
-                            </Details>
-                        </ProductDetail>
-                        <PriceDetail>
-                            <ProductAmountContainer>
-                                <Add/>
-                                <ProductAmount>2</ProductAmount>
-                                <Remove/>
-                            </ProductAmountContainer>
-                            <ProductPrice>$ 30</ProductPrice>
-                        </PriceDetail>
-                    </Product>
-                </Info>
-                <Summary>
-                    <SummaryTitle>ORDER SUMMARY</SummaryTitle>
-                    <SummaryItem>
-                        <SummaryItemText>SubTotal</SummaryItemText>
-                        <SummaryItemPrice>$ 80</SummaryItemPrice>
-                    </SummaryItem>
-                    <SummaryItem>
-                        <SummaryItemText>Estimated Shipping</SummaryItemText>
-                        <SummaryItemPrice>$ 5.90</SummaryItemPrice>
-                    </SummaryItem>
-                    <SummaryItem>
-                        <SummaryItemText>Shipping Discount</SummaryItemText>
-                        <SummaryItemPrice>$ -5.90</SummaryItemPrice>
-                    </SummaryItem>
-                    <SummaryItem type="total">
-                        <SummaryItemText>Total</SummaryItemText>
-                        <SummaryItemPrice>$ 80</SummaryItemPrice>
-                    </SummaryItem>
-                    <Button>CHECKOUT NOW</Button>
-                </Summary>
-            </Bottom>
-        </Wrapper>
-    </Container>
+    const cartWithData = useMemo(() => {
+        const products = Object
+            .entries(cart)
+            .map(([id, props]) => ({ id, ...props }))
+            .map(({ id, ...props }) => {
+                const productInfo = newProducts.find(product => product.id === id)
 
+                if(!productInfo) {
+                    return null
+                }
+
+                return {
+                    id,
+                    ...props,
+                    ...productInfo
+                }
+            })
+
+        return products
+    }, [cart])
+
+    const Subtotal = useMemo(() => {
+        console.log(cartWithData
+            .map(({ price, qtd }) => price * qtd))
+        const subtotal = cartWithData
+            .map(({ price, qtd }) => price * qtd)
+            .reduce((a, b) => a + b, 0)
+
+        return subtotal
+    }, [cartWithData])
+
+    useEffect(() => {
+        const calculateEstimatedShipping = () => {
+            setEstimatedShipping(15)
+        }
+
+        calculateEstimatedShipping()
+    }, [])
+
+    const handleFormSubmit = () => {
+        // call stripe checkout
+    }
+
+    return (
+        <Container>
+            <Wrapper>
+                <Title>Checkout</Title>
+
+                <Bottom>
+                    <Info>
+                        {cartWithData.map(({ id, qtd, img, name, price, selectedSize }) => (
+                            <Product key={id}>
+                                <ProductDetail>
+                                    <Image src={img}/>
+                                    <Details>
+                                        <ProductName><b>Product:</b> {name}</ProductName>
+                                        <ProductSize><b>Size:</b> {selectedSize}</ProductSize>
+                                    </Details>
+                                </ProductDetail>
+
+                                <PriceDetail>
+                                    <ProductAmountContainer>
+                                        <Button>
+                                            <Add/>
+                                        </Button>
+
+                                        <ProductAmount>{qtd}</ProductAmount>
+
+                                        <Button>
+                                            <Remove/>
+                                        </Button>
+                                    </ProductAmountContainer>
+
+                                    <ProductPrice>$ {price}</ProductPrice>
+                                </PriceDetail>
+                            </Product>
+                        ))}
+
+                        <Hr/>
+                    </Info>
+                    <Summary>
+                        <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+
+                        <SummaryItem>
+                            <SummaryItemText>SubTotal</SummaryItemText>
+                            <SummaryItemPrice>$ {Subtotal}</SummaryItemPrice>
+                        </SummaryItem>
+                        <SummaryItem>
+                            <SummaryItemText>Estimated Shipping</SummaryItemText>
+                            <SummaryItemPrice>$ {estimatedShipping}</SummaryItemPrice>
+                        </SummaryItem>
+                        <SummaryItem type="total">
+                            <SummaryItemText>Total</SummaryItemText>
+                            <SummaryItemPrice>$ {Subtotal + estimatedShipping}</SummaryItemPrice>
+                        </SummaryItem>
+                        <Button>CHECKOUT NOW</Button>
+                    </Summary>
+                </Bottom>
+            </Wrapper>
+        </Container>
     )
 }
 

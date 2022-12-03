@@ -1,9 +1,12 @@
 import styled from "styled-components"
+import Correios from "node-correios"
 import { ArrowRight } from "@material-ui/icons"
+
+import { useCart } from "../../context/cart-store"
 
 import { Input } from "../../components/input"
 import { Button } from "../../components/button"
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 const Container = styled.main`
   width: 100%;
@@ -69,12 +72,23 @@ const Info = styled.aside`
       border: 2px solid #fff;
 
       &:disabled {
+        cursor: not-allowed;
         filter: opacity(50%);
       }
 
-      &:focus {
+      &:focus, &[data-selected="true"] {
         border-color: #1DA6F2;
       }
+
+      &:not(:disabled):hover {
+        border-color: #7fcbf4;
+      }
+
+      &[data-selected="true"]:hover {
+        border-color: #1DA6F2;
+      }
+
+      
     }
   }
 `
@@ -89,13 +103,29 @@ const defaultSizes = [
   "42",
 ]
 
-export const Layout = ({ id, name, description, price, sizes = [], img, loading = true }) => {
-  const priceFormatter = new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL"
-  })
+const correios = new Correios();
 
-  const handleAddToCart = () => {}
+const priceFormatter = new Intl.NumberFormat("pt-BR", {
+  style: "currency",
+  currency: "BRL"
+})
+
+export const Layout = ({ id, name, description, price, sizes = [], img, loading = true }) => {
+  const { addItemToCart } = useCart()
+
+  const [selectedSize, setSelectedSize] = useState(null)
+
+  const handleAddToCart = () => {
+    if(!selectedSize) {
+      return alert("Selecione um tamanho por favor")
+    }
+
+    addItemToCart({
+      id,
+      qtd: 1,
+      selectedSize
+    })
+  }
   
   return (
     <Container>
@@ -111,7 +141,12 @@ export const Layout = ({ id, name, description, price, sizes = [], img, loading 
 
           <div>
             {defaultSizes.map((size) => (
-              <button disabled={!(sizes.includes(size))} key={size}>
+              <button
+                key={size}
+                disabled={!(sizes.includes(size))}
+                data-selected={selectedSize === size}
+                onClick={() => setSelectedSize(size)}
+              >
                 {size}
               </button>
             ))}
@@ -144,7 +179,7 @@ const CalculateFreteContainer = styled.footer`
   }
 
   div {
-    width: 200px;
+    width: 300px;
 
     display: flex;
     position: relative;
@@ -152,10 +187,28 @@ const CalculateFreteContainer = styled.footer`
 
     overflow: overlay;
 
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+
+    input[type=number] {
+        -moz-appearance:textfield; /* Firefox */
+    }
+
     input {
-      border-radius: 0px;
+      border-radius: 999px;
+      background: #404040;
       height: 36px;
+      border: 2px solid transparent;
       padding-right: calc(16px + 12px);
+      color: #fff;
+
+      ::placeholder {
+        color: #929292;
+      }
     }
 
     button {
@@ -166,16 +219,67 @@ const CalculateFreteContainer = styled.footer`
       right: 8px;
       top: 50%;
       transform: translateY(-50%);
-      color: #595959;
+      color: #929292;
+      
+      &:hover {
+        color: #d7d7d7;
+      }
     }
+  }
+
+  p {
+    height: 20px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
   }
 `
 
 function CalculateFrete() {
-  const [frete, setFrete] = useState(null)
+  const [state, setState] = useState({
+    value: null,
+    error: null
+  })
+  const inputRef = useRef(null)
 
-  function handleCalculateFrete() {
-    setFrete("R$ 9999")
+  async function handleCalculateFrete() {
+    if(!inputRef.current.value) {
+      // preencha um valor
+      setState({
+        value: null,
+        error: "Preencha por favor!"
+      })
+
+      return
+    }
+
+    try {
+      const [result] = await correios.calcPreco({
+        sCepOrigem: "05311900",
+        nCdServico: "04014",
+        sCepDestino: String(inputRef.current.value),
+        nVlPeso: 0.4,
+        nCdFormato: 1,
+        nVlComprimento: 50,
+        nVlAltura: 30,
+        nVlLargura: 50,
+        nVlDiametro: 50
+      })
+
+      const [reais, centavos] = result.Valor.split(",")
+      const total = Number(reais) + (Number(centavos) / 100)
+
+      setState({
+        value: priceFormatter.format(total)
+      })
+    } catch (error) {
+      console.error(error)
+      setState({
+        error: "Não consegui calcular o frete :/"
+      })
+    }
   }
 
   return (
@@ -183,7 +287,25 @@ function CalculateFrete() {
       <strong>Calcule o Frete</strong>
 
       <div>
-        <Input placeholder="Digite seu CEP" />
+        <Input
+          ref={inputRef}
+          onFocus={() => {
+            if(state.value) {
+              return setState({ error: null, value: state.value })
+            }
+
+            setState({ error: null })
+          }}
+          placeholder="Digite seu CEP (apenas números)"
+          type="number"
+          min="1"
+          max="99999999"
+          style={state.error ? {
+            borderColor: "red"
+          } : {
+            borderColor: "transparent"
+          }}
+        />
 
         <button onClick={handleCalculateFrete}>
           <ArrowRight
@@ -193,7 +315,7 @@ function CalculateFrete() {
         </button>      
       </div>
 
-      {frete && <p>{frete}</p>}
+      <p className={state.error ? "error" : ""}>{state.error ? state.error : state.value}</p>
     </CalculateFreteContainer>
   )
 }
