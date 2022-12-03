@@ -11,7 +11,7 @@ export default function Product() {
 
   useEffect(() => {
     const currentProduct = newProducts.find(_product => slugify(_product.name) === slug)
-
+    
     if(!currentProduct) {
       throw new Error("bru")
     }

@@ -16,7 +16,7 @@ const Wrapper = styled.header`
 `
 
 const Container = styled.div`
-  max-width: 800px;
+  max-width: 991px;
   width: 100%;
   margin: auto;
 

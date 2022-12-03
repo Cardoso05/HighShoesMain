@@ -19,6 +19,8 @@ html,  body, #root {
 body {
   color: #fff;
   background: #222222;
+  
+  padding-top: 64px;
 }
 
 ul {
