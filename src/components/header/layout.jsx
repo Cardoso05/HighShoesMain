@@ -151,7 +151,7 @@ export const Layout = ({ links = Array.from({ length: 4 }).map(() => ({name: "",
 
           {loading
             ? <Skeleton width={24} height={24} />
-            : <IconLink to="/profile">
+            : <IconLink to="/perfil">
                 <Icons.User />
               </IconLink>
           }

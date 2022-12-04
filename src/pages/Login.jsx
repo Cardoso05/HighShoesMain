@@ -1,6 +1,9 @@
+import { useRef, useState } from "react"
 import styled from "styled-components"
+import { Link, useNavigate, useSearchParams } from "react-router-dom"
 import { ArrowRight } from "@material-ui/icons"
 
+import { useAuth } from "../context/auth-store"
 import { Button } from "../components/button"
 import { Input } from "../components/input"
 
@@ -47,6 +50,41 @@ const GradientCircle = styled.div`
 `
 
 export default function Login() {
+  const { login } = useAuth()
+  const [query] = useSearchParams()
+  const navigate = useNavigate()
+
+  const [error, setError] = useState("")
+
+  const emailRef = useRef(null)
+  const passwordRef = useRef(null)
+
+  const handleSignIn = async (event) => {
+    event.preventDefault()
+
+    const email = emailRef.current.value
+    const password = passwordRef.current.value
+
+    if(!email || !password) {
+      return setError("Prencha os campos!")
+    }
+
+    const result = await login({
+      email,
+      password
+    });
+
+    if(!result.ok) {
+      return setError(result.message) 
+    }
+
+    if(query.get("to")) {
+      return navigate(`/${query.get("to")}`)
+    }
+
+    navigate("/perfil")
+  }
+
   return (
     <Wrapper>
       <Container>
@@ -54,13 +92,15 @@ export default function Login() {
           <UserCheck />
         </GradientCircle>
 
-        <Form>
+        <Form onSubmit={handleSignIn}>
           <h1 style={{ fontSize: "20px" }}>Entrar na conta</h1>
-          <Input type="text" placeholder="E-mail" />
-          <Input type="password" placeholder="Senha" />
+          {error && <span style={{color: "red"}}>{error}</span>}
+          <Input onFocus={() => setError("")} type="email" placeholder="E-mail" ref={emailRef} />
+          <Input onFocus={() => setError("")} type="password" placeholder="Senha" ref={passwordRef} />
           <Button>
             <strong style={{ lineHeight: "11px" }}>ENTRAR</strong> <ArrowRight />
           </Button>
+          <Link to="/registro">Não tenho conta</Link>
         </Form>
       </Container>
     </Wrapper>

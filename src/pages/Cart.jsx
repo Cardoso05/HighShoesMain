@@ -1,8 +1,12 @@
-import { useCart } from "../context/cart-store"
-import { currencyFormatter } from "../components/product"
-import styled from 'styled-components'
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { Add, Remove } from "@material-ui/icons"
+import styled from 'styled-components'
+import { useNavigate } from "react-router-dom"
+
+import { useCart } from "../context/cart-store"
+import { useAuth } from "../context/auth-store"
+
+import { currencyFormatter } from "../components/product"
 import { Button } from "../components/button"
 
 const Container = styled.div``
@@ -88,6 +92,12 @@ const Summary = styled.form`
     border-radius: 10px;
     padding: 20px;
     height: 50vh;
+
+    button {
+        font-size: 20px;
+        padding: 15px 20px;
+        justify-content: center;
+    }
 `
 
 const SummaryTitle = styled.h1`
@@ -106,6 +116,9 @@ const SummaryItemText = styled.span``
 const SummaryItemPrice = styled.span``
 
 const Cart = () => {
+    const navigate = useNavigate()
+    
+    const { signedIn, requireSignIn } = useAuth()
     const { cart, addItemToCart, removeItemFromCart, products, setProducts, emptyCart } = useCart()
     const [estimatedShipping, setEstimatedShipping] = useState(0)
 
@@ -154,6 +167,11 @@ const Cart = () => {
     const handleFormSubmit = useCallback((event) => {
         event.preventDefault()
 
+        // call for signed in user
+        if(!signedIn) {
+            return navigate(requireSignIn())
+        }
+
         function findProduct(id) {
             return products.find(product => product.id === id)
         }
@@ -185,8 +203,10 @@ const Cart = () => {
                 
             })
             
-            emptyCart({})
-    }, [cart, emptyCart, products, setProducts])
+        emptyCart({})
+        
+        navigate("/")
+    }, [cart, emptyCart, navigate, products, requireSignIn, setProducts, signedIn])
 
     return (
         <Container>

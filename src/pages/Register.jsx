@@ -3,6 +3,9 @@ import { ArrowRight } from "@material-ui/icons"
 
 import { Button } from "../components/button"
 import { Input } from "../components/input"
+import { Link, useNavigate } from "react-router-dom"
+import { useAuth } from "../context/auth-store"
+import { useRef, useState } from "react"
 
 const Wrapper = styled.main`
   width: 100%;
@@ -47,6 +50,39 @@ const GradientCircle = styled.div`
 `
 
 export default function Login() {
+  const { register } = useAuth()
+  const navigate = useNavigate()
+
+  const [error, setError] = useState("")
+
+  const nameRef = useRef(null)
+  const emailRef = useRef(null)
+  const passwordRef = useRef(null)
+
+  const handleSignIn = async (event) => {
+    event.preventDefault()
+
+    const name = nameRef.current.value
+    const email = emailRef.current.value
+    const password = passwordRef.current.value
+
+    if(!name || !email || !password) {
+      return setError("Prencha os campos!")
+    }
+
+    const result = await register({
+      name,
+      email,
+      password
+    });
+
+    if(!result.ok) {
+      return setError(result.message) 
+    }
+
+    navigate("/perfil")
+  }
+
   return (
     <Wrapper>
       <Container>
@@ -54,14 +90,16 @@ export default function Login() {
           <UserCheck />
         </GradientCircle>
 
-        <Form>
+        <Form onSubmit={handleSignIn}>
           <h1 style={{ fontSize: "20px" }}>Crie sua conta</h1>
-          <Input type="text" placeholder="Nome" />
-          <Input type="text" placeholder="E-mail" />
-          <Input type="password" placeholder="Senha" />
+          {error && <span style={{color: "red"}}>{error}</span>}
+          <Input onFocus={() => setError("")} type="text" placeholder="Nome" ref={nameRef} />
+          <Input onFocus={() => setError("")} type="email" placeholder="E-mail" ref={emailRef} />
+          <Input onFocus={() => setError("")} type="password" placeholder="Senha" ref={passwordRef} />
           <Button>
             <strong style={{ lineHeight: "11px" }}>CRIAR CONTA</strong> <ArrowRight />
           </Button>
+          <Link to="/login">Já tenho conta</Link>
         </Form>
       </Container>
     </Wrapper>

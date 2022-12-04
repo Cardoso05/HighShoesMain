@@ -7,6 +7,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Cart from "./pages/Cart";
+import Perfil from "./pages/Perfil";
 
 import NotFound from "./pages/Not-found"
 
@@ -40,6 +41,8 @@ export const Router = () => {
             <Home />
           </Suspense>
         } />
+
+        <Route path="/perfil" element={<Perfil />} />
 
         <Route path="/produtos">
           <Route path="/produtos" element={
