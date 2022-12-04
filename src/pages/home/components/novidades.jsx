@@ -13,9 +13,9 @@ export const Novidades = ({ products, loading = true }) => {
           justifyContent: "space-between"
         }}
       >
-        {products.map(({ id, img, name, price }) => (
+        {products.map(({ id, ...props }) => (
           <li key={id}>
-            {loading ? <Skeleton  width={200} height={310} /> : <Product img={img} name={name} price={price} />}
+            {loading ? <Skeleton  width={200} height={310} /> : <Product {...props} />}
           </li>
         ))}
       </ul>

@@ -28,7 +28,7 @@ const Image = styled(RouterLink)`
 
 export const Products = ({ products, loading = true }) => {
   return (
-    <Section title="Escolha uma marca" loading={loading}>
+    <Section oading={loading}>
       <ul
         style={{
           width: "100%",

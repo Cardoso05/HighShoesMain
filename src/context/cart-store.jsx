@@ -3,6 +3,8 @@ import { useCallback } from "react"
 import { useState } from "react"
 import { createContext, useContext } from "react"
 
+import { newProducts } from "../data"
+
 export const CartStore = createContext({})
 
 export const useCart = () => {
@@ -10,18 +12,8 @@ export const useCart = () => {
 }
 
 export const CartStoreProvider = ({ children }) => {
-  const [cart, setCart] = useState({
-    "2-40": {
-        "id": 2,
-        "qtd": 1,
-        "selectedSize": "40"
-    },
-    "1-38": {
-        "id": 1,
-        "qtd": 2,
-        "selectedSize": "38"
-    }
-})
+  const [products, setProducts] = useState(newProducts)
+  const [cart, setCart] = useState({})
 
   const numItemsInCart = useMemo(() => {
     const numOfProducts = Object
@@ -35,8 +27,22 @@ export const CartStoreProvider = ({ children }) => {
   const addItemToCart = useCallback((item) => {
     const selector = [`${item.id}-${item.selectedSize}`]
 
+    const product = newProducts.find(product => product.id === item.id)
+    const productStockLeft = (product.stock - item.qtd) > 0
+
+    if(!productStockLeft) {
+      return {
+        code: "max-stock",
+        message: `O estoque acabou :(`
+      }
+    }
+
     if(cart[selector]) {
-      cart[selector].qtd += 1
+      if((cart[selector].qtd + item.qtd) > product.stock) { // shadow
+        cart[selector].qtd = product.stock
+      } else {
+        cart[selector].qtd += item.qtd
+      }
     } else {
       cart[selector] = item
     }
@@ -44,11 +50,35 @@ export const CartStoreProvider = ({ children }) => {
     setCart({ ...cart })
   }, [cart])
 
+  const removeItemFromCart = useCallback((item) => {
+    const selector = [`${item.id}-${item.selectedSize}`]
+
+    if(!selector) {
+      return
+    }
+
+    if(cart[selector].qtd > 1) {
+      cart[selector].qtd -= item.qtd
+    } else {
+      delete cart[selector]
+    }
+
+    setCart({ ...cart })
+  }, [cart])
+
+  const emptyCart = () => {
+    setCart({})
+  }
+
   return (
     <CartStore.Provider value={{
       numItemsInCart,
       cart,
-      addItemToCart
+      addItemToCart,
+      removeItemFromCart,
+      products,
+      setProducts,
+      emptyCart
     }}>
       {children}
     </CartStore.Provider>

@@ -1,11 +1,14 @@
 import { Layout } from "./layout"
 
-import { newProducts, brands } from "../../data"
+import { brands } from "../../data"
+import { useCart } from "../../context/cart-store"
 
 export default function Products() {
+  const { products } = useCart()
+
   return (
     <Layout
-      products={newProducts}
+      products={products}
       brands={brands}
     />
   )

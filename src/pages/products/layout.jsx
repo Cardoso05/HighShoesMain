@@ -1,4 +1,4 @@
-import { KeyboardArrowDown, Check } from "@material-ui/icons"
+import { KeyboardArrowDown } from "@material-ui/icons"
 import { useMemo, useState } from "react"
 import styled from "styled-components"
 import { Product } from "../../components/product"

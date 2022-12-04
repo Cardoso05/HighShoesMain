@@ -145,7 +145,7 @@ export const Layout = ({ links = Array.from({ length: 4 }).map(() => ({name: "",
             ? <Skeleton width={24} height={24} />
             : <IconLink to="/checkout">
                 <Icons.ShoppingCart />
-                {numItemsInCart > 0 && <div>{numItemsInCart > 9 ? "9+" : numItemsInCart}</div>}
+                {numItemsInCart > 0 && currentPage !== "/checkout" && <div>{numItemsInCart > 9 ? "9+" : numItemsInCart}</div>}
               </IconLink>
           }
 

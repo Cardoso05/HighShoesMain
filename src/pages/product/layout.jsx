@@ -110,7 +110,7 @@ const priceFormatter = new Intl.NumberFormat("pt-BR", {
   currency: "BRL"
 })
 
-export const Layout = ({ id, name, description, price, sizes = [], img, loading = true }) => {
+export const Layout = ({ id, name, description, price, stock, sizes = [], img, loading = true }) => {
   const { addItemToCart } = useCart()
 
   const [selectedSize, setSelectedSize] = useState(null)
@@ -120,11 +120,15 @@ export const Layout = ({ id, name, description, price, sizes = [], img, loading 
       return alert("Selecione um tamanho por favor")
     }
 
-    addItemToCart({
+    const error = addItemToCart({
       id,
       qtd: 1,
       selectedSize
     })
+
+    if(error) {
+      return alert(`${error.message}\ncódigo do erro: ${error.code}`)
+    }
   }
   
   return (
@@ -134,6 +138,7 @@ export const Layout = ({ id, name, description, price, sizes = [], img, loading 
           <h1>{name}</h1>
           <p>{description}</p>
           <h2>{priceFormatter.format(price)}</h2>
+          <small>{stock} Disponíveis</small>
         </header>
 
         <section className="sizes">
@@ -153,7 +158,7 @@ export const Layout = ({ id, name, description, price, sizes = [], img, loading 
           </div>
         </section>
 
-        <Button style={{ width: "max-content" }} onClick={handleAddToCart}>
+        <Button disabled={stock === 0} style={{ width: "max-content" }} onClick={handleAddToCart}>
           ADICIONAR AO CARRINHO
           <ArrowRight />
         </Button>

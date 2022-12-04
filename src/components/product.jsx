@@ -43,6 +43,39 @@ const ProductContainer = styled(RouterLink)`
   align-items: flex-start;
   justify-content: center;
 
+  position: relative;
+
+  .no-stock {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: max-content;
+    color: #fff;
+    font-weight: bold;
+    z-index: 100;
+  }
+
+  &[data-empty="true"] {
+    &::after {
+      content: "";
+
+      z-index: 20;
+      background: rgba(0, 0, 0, 0.6);
+
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      cursor: not-allowed;
+
+      border-radius: 20px;
+    }
+  }
+
   img {
     width: 230px;
     height: auto;
@@ -50,7 +83,7 @@ const ProductContainer = styled(RouterLink)`
     /* transform: rotate(-30deg); */
   }
 
-  &:hover, &:focus {
+  &:not([data-empty="true"]):hover, &:not([data-empty="true"]):focus {
     img {
       transition: 600ms transform;
       /* transform: translateY(-40%); */
@@ -84,25 +117,32 @@ const ProductContainer = styled(RouterLink)`
   }
 `
 
-export const Product = ({ img, name, price }) => {
-  const formatter = new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "brl",
-  })
+export const currencyFormatter = new Intl.NumberFormat("pt-BR", {
+  style: "currency",
+  currency: "brl",
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 2
+})
+
+export const Product = ({ img, name, price, stock }) => {
+  const ranOutOfStock = stock === 0
 
   return (
-    <ProductContainer to={`/produtos/${slugify(name)}`}>
+    <ProductContainer data-empty={ranOutOfStock} to={ranOutOfStock ? "" :  `/produtos/${slugify(name)}`}>
       <img
         src={img}
         alt=""
       />
 
+      {ranOutOfStock && <p className="no-stock">Sem Estoque!</p>}
+
       <p>
         <strong>{name}</strong>
       </p>
+      {/* <small>Apenas {stock} disponíveis</small> */}
       
       <footer>
-        <span>{formatter.format(price)}</span>
+        <span>{currencyFormatter.format(price)}</span>
         
         <Button>
           <ArrowRight width={24} height={24}  />

@@ -147,10 +147,11 @@ export const newProducts = [
         id: 1,
         name: "tênis chinês nik",
         description: "lorem ipsum, lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsum,lorem ipsum, lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsum",
-        price: 600,
+        price: 599.99,
         sizes: ["36", "37", "38", "39", "40", "42"],
         img: product,
-        brandId: 1
+        brandId: 1,
+        stock: 20
     },
     {
         id: 2,
@@ -159,7 +160,8 @@ export const newProducts = [
         price: 1100,
         sizes: ["36", "38", "40"],
         img: product,
-        brandId: 2
+        brandId: 2,
+        stock: 20
     },
     {
         id: 3,
@@ -168,7 +170,8 @@ export const newProducts = [
         price: 799.99,
         sizes: ["36", "37", "38", "39", "40"],
         img: product,
-        brandId: 3
+        brandId: 3,
+        stock: 20
     },
     {
         id: 4,
@@ -177,7 +180,8 @@ export const newProducts = [
         price: 999.99,
         sizes: ["36", "37", "38", "39", "40"],
         img: product,
-        brandId: 4
+        brandId: 4,
+        stock: 20
     },
 ]
 
