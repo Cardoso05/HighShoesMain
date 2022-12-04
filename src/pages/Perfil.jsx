@@ -4,14 +4,16 @@ import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"
 
 export default function Perfil() {
-  const { signedIn, user } = useAuth()
+  const { isSignedIn, user } = useAuth()
   const navigate = useNavigate()
 
   useEffect(() => {
+    const signedIn = isSignedIn()
+
     if(!signedIn) {
       navigate("/login")
     }
-  }, [navigate, signedIn])
+  }, [isSignedIn, navigate])
   
   return (
     <div>
