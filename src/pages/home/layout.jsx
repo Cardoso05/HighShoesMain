@@ -24,10 +24,10 @@ const Container = styled.main`
 export const Layout = ({ loading = true, newProducts = [], brands = [], faq = [] }) => {
   return (
     <Container>
-      <Novidades loading={loading} products={newProducts} />
+      <Novidades loading={loading} products={newProducts.slice(0, 4)} />
       <Brands loading={loading} brands={brands} />
       <Promotions loading={loading} />
-      <Products loading={loading} products={newProducts} />
+      <Products loading={loading} products={newProducts.slice(4, 8)} />
       <FAQ loading={loading} questions={faq} />
       {/* <Slider/>
       <Categories/>

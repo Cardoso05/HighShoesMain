@@ -41,7 +41,7 @@ const ProductContainer = styled(RouterLink)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
 
   position: relative;
 
@@ -77,7 +77,7 @@ const ProductContainer = styled(RouterLink)`
   }
 
   img {
-    width: 230px;
+    width: 100%;
     height: auto;
     align-self: center;
     /* transform: rotate(-30deg); */
@@ -92,6 +92,14 @@ const ProductContainer = styled(RouterLink)`
         ${HeavenFloatingAnimation} 3s ease-in-out infinite;
       animation-delay: 0ms, 600ms;
     }
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
   }
 
   footer {
@@ -136,18 +144,20 @@ export const Product = ({ img, name, price, stock }) => {
 
       {ranOutOfStock && <p className="no-stock">Sem Estoque!</p>}
 
-      <p>
-        <strong>{name}</strong>
-      </p>
-      {/* <small>Apenas {stock} disponíveis</small> */}
-      
-      <footer>
-        <span>{currencyFormatter.format(price)}</span>
+      <section>
+        <p>
+          <strong>{name}</strong>
+        </p>
+        {/* <small>Apenas {stock} disponíveis</small> */}
         
-        <Button>
-          <ArrowRight width={24} height={24}  />
-        </Button>
-      </footer>
+        <footer>
+          <span>{currencyFormatter.format(price)}</span>
+        
+          <Button>
+            <ArrowRight width={24} height={24}  />
+          </Button>
+        </footer>
+      </section>
     </ProductContainer>
 
   )

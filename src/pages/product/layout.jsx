@@ -20,7 +20,7 @@ const Container = styled.main`
   justify-content: space-between;
 
   img {
-    width: 100%;
+    width: 600px;
   }
 `
 

@@ -104,8 +104,8 @@ export const sliderItems = [
 export const brands = [
     {
         id: 1,
-        img: categorie,
-        name: "Nike"
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/1024px-Adidas_Logo.svg.png",
+        name: "Adidas"
     },
     {
         id: 2,
@@ -145,43 +145,69 @@ export const categories = [
 export const newProducts = [
     {
         id: 1,
-        name: "tênis chinês nik",
-        description: "lorem ipsum, lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsum,lorem ipsum, lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsum",
-        price: 599.99,
+        name: "Tênis Corrida Adidas 4dfwd 2",
+        description: "O adidas 4DFWD 2 redefine a evolução, combinando a exclusiva inovação pioneira da entressola impressa em 3D com a nova estrutura do cabedal e o solado Continental para mais aderência. A entressola do adidas 4DFWD 2 se comprime e reduz as forças de frenagem, transformando a energia do impacto em impulso a cada passo. O resultado é uma corrida suave que desliza seus pés sobre o asfalto. O solado de borracha Continental aderente oferece tração em superfícies secas e molhadas, mantendo você em movimento em qualquer condição climática, e o novo ajuste do cabedal adidas PRIMEKNIT+ envolve os pés para melhorar a movimentação. Feito com uma série de materiais reciclados, o cabedal contém pelo menos 50% de conteúdo reaproveitado. Este produto representa apenas uma das nossas soluções para ajudar a acabar com os resíduos plásticos",
+        price: 1599.99,
         sizes: ["36", "37", "38", "39", "40", "42"],
-        img: product,
+        img: "https://i.ebayimg.com/00/s/MTAwMFgxMDAw/z/VuAAAOSwRL9hm4MD/$_57.png",
         brandId: 1,
-        stock: 20
-    },
-    {
-        id: 2,
-        name: "Nike sb Dunk Low “Cactus Jack”",
-        description: "Descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição",
-        price: 1100,
-        sizes: ["36", "38", "40"],
-        img: product,
-        brandId: 2,
-        stock: 20
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
     },
     {
         id: 3,
-        name: "tênis chinês nik",
-        description: "lorem ipsum, lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsum,lorem ipsum, lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsum",
-        price: 799.99,
+        name: "Tênis Ultra 4d",
+        description: "Todo dia é uma oportunidade de melhorar as suas expectativas, perspectivas e habilidades de corrida. O Ultra 4D foi codificado para ajudar nessa trajetória, começando com uma entressola 4D impressa em 3D que estabiliza a sua corrida. O amortecimento duradouro ajuda a ir mais longe, e o adidas PRIMEKNIT abraça os pés para mais suporte a cada passo dado. Feito com uma série de materiais reciclados, o cabedal contém pelo menos 50% de conteúdo reaproveitado. Este produto representa apenas uma das nossas soluções para ajudar a acabar com os resíduos plásticos.",
+        price: 1499.99,
         sizes: ["36", "37", "38", "39", "40"],
-        img: product,
-        brandId: 3,
-        stock: 20
+        img: "https://cdn.shopify.com/s/files/1/0550/3657/5853/products/Ultra_4D_Core_White-FX4089-0.png?v=1658841793&width=1024",
+        brandId: 1,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
     },
     {
         id: 4,
-        name: "tênis chinês nik",
-        description: "lorem ipsum, lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsum,lorem ipsum, lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsum",
-        price: 999.99,
+        name: "Tênis Pharrell Williams HU NMD",
+        description: "Pharrell Williams é conhecido por não aceitar limitações. Em colaboração com esse visionário, nossa mais recente coleção é sobre quebrar barreiras e ter expressão pessoal. Explore isso com este tênis adidas x Pharrell Williams HU NMD. A combinação de força do cabedal flexível adidas Primeknit com a entressola macia BOOST faz cada movimento parecer fácil.",
+        price: 1199.99,
         sizes: ["36", "37", "38", "39", "40"],
-        img: product,
-        brandId: 4,
-        stock: 20
+        img: "https://droper-media.s3.amazonaws.com/2522021142743214.png",
+        brandId: 1,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+    {
+        id: 5,
+        name: "Tênis X9000l4 Heat.Rdy",
+        description: "Mantenha o ritmo durante a parte mais quente do dia. Este tênis de corrida adidas HEAT.RDY tem cabedal em mesh que recebe fluxo de ar refrescante em corridas de curta e média distâncias. A tecnologia Boost oferece incrível retorno de energia e conforto instantâneo para você seguir em frente. O cabedal adidas Primeknit envolve os pés com suporte adaptativo, melhorando a mobilidade. Feito com uma série de materiais reciclados, o cabedal contém pelo menos 50% de conteúdo reaproveitado. Este produto representa apenas uma de nossas soluções para ajudar a acabar com os resíduos plásticos.",
+        price: 899.99,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://martimx.vtexassets.com/arquivos/ids/1003823-800-800?v=638022688677530000&width=800&height=800&aspect=true",
+        brandId: 1,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+    {
+        id: 6,
+        name: "Tênis Nmd_V3",
+        description: "Vá em frente e marque todos os requisitos com este tênis adidas NMD_V3. Respirável. Confortável. Feito de materiais reciclados. A resposta é sim para os três. Além disso, há o estilo, como os detalhes perfurados, que também agregam respirabilidade. Brincando com a transparência, as Três Listras sobrepõem-se às perfurações, deixando-as visíveis sob a assinatura monocromática. O cabedal deste tênis é feito com fios de alta performance contendo pelo menos 50% Parley Ocean Plastic — plástico reciclado reimaginado interceptado em ilhas remotas, praias, comunidades costeiras e litorais, evitando poluir os oceanos. Os outros 50% dos fios são de poliéster reciclado.",
+        price: 1199.99,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://eurosport.com.mt/images/thumbs/0163601_nmd_v3-shoes_550.png",
+        brandId: 1,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+    {
+        id: 7,
+        name: "Tênis Forum Exhibit Low",
+        description: "O adidas Forum já virou ícone. Este modelo é a próxima evolução dele. Ainda inconfundível como clássico atemporal da moda basquete, este tênis inclui os mesmos detalhes essenciais, como o tornozelo em X e as Três Listras. A partir daí, deixamos o design evoluir com um cabedal em camadas e cores modernas.",
+        price: 599.99,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://www.thenextsole.com/storage/images/GW4358.png",
+        brandId: 1,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
     },
 ]
 

@@ -3,12 +3,24 @@ import { Add, Remove } from "@material-ui/icons"
 import styled from 'styled-components'
 import { useNavigate } from "react-router-dom"
 
+import { loadStripe } from '@stripe/stripe-js';
+
 import { useCart } from "../context/cart-store"
 import { useAuth } from "../context/auth-store"
 
 import { currencyFormatter } from "../components/product"
 import { Button } from "../components/button"
 
+
+let stripePromise;
+
+const getStripe = () => {
+  if (!stripePromise) {
+    stripePromise = loadStripe("pk_test_51JBlYRL2PaVveUDb3toqXDpVlHiBr5TEospTxhqKvFstqUiLPZWkv4IRyDcA3yP9PQfPOuyyYuIqgvdVpM1gTdnl00X41b223d");
+  }
+
+  return stripePromise;
+};
 const Container = styled.div``
 
 const Wrapper = styled.div`
@@ -119,7 +131,7 @@ const Cart = () => {
     const navigate = useNavigate()
     
     const { signedIn, requireSignIn } = useAuth()
-    const { cart, addItemToCart, removeItemFromCart, products, setProducts, emptyCart } = useCart()
+    const { cart, addItemToCart, removeItemFromCart, products, setProducts } = useCart()
     const [estimatedShipping, setEstimatedShipping] = useState(0)
 
     const cartWithData = useMemo(() => {
@@ -164,7 +176,7 @@ const Cart = () => {
         calculateEstimatedShipping()
     }, [])
 
-    const handleFormSubmit = useCallback((event) => {
+    const handleFormSubmit = useCallback(async (event) => {
         event.preventDefault()
 
         // call for signed in user
@@ -202,11 +214,28 @@ const Cart = () => {
                 setProducts([...products])
                 
             })
-            
-        emptyCart({})
+
+        let lineItems = cartWithData
+            .map(({ paymentUrl, qtd }) => ({
+                price: paymentUrl,
+                quantity: qtd
+            }))
+
+        const checkoutOptions = {
+            lineItems,
+            mode: "payment",
+            successUrl: `${window.location.origin}/success`,
+            cancelUrl: `${window.location.origin}/checkout`
+        };
+
+        const stripe = await getStripe();
+        const { error } = await stripe.redirectToCheckout(checkoutOptions);
+        console.log("Stripe checkout error", error);
+
+        // emptyCart({})
         
-        navigate("/")
-    }, [cart, emptyCart, navigate, products, requireSignIn, setProducts, signedIn])
+        // navigate("/")
+    }, [cart, cartWithData, navigate, products, requireSignIn, setProducts, signedIn])
 
     return (
         <Container>
