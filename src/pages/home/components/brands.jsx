@@ -15,7 +15,7 @@ const Brand = styled(RouterLink)`
   place-items: center;
 
   img {
-    width: 73px;
+    width: auto;
     height: 61px;
   }
 `
