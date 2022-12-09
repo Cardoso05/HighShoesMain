@@ -112,16 +112,6 @@ export const brands = [
         img: categorie,
         name: "Nike"
     },
-    {
-        id: 3,
-        img: categorie,
-        name: "Nike"
-    },
-    {
-        id: 4,
-        img: categorie,
-        name: "Nike"
-    },
 ]
 
 export const categories = [

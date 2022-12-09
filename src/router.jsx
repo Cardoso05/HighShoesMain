@@ -8,6 +8,9 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Cart from "./pages/Cart";
 import Perfil from "./pages/Perfil";
+import Brands from "./pages/brands";
+import Brand from "./pages/brand";
+import About from "./pages/about";
 
 import NotFound from "./pages/Not-found"
 
@@ -43,6 +46,12 @@ export const Router = () => {
         } />
 
         <Route path="/perfil" element={<Perfil />} />
+
+        <Route path="/marcas" element={<Brands />} />
+
+        <Route path="/marcas/:slug" element={<Brand />} />
+
+        <Route path="/sobre" element={<About />} />
 
         <Route path="/produtos">
           <Route path="/produtos" element={
