@@ -112,6 +112,16 @@ export const brands = [
         img: categorie,
         name: "Nike"
     },
+    {
+        id: 3,
+        img: "https://i.pinimg.com/originals/01/39/93/0139937c2f641ab61fd020844ccfd459.png",
+        name: "Jordan"
+    },
+    {
+        id: 4,
+        img: "https://logos-download.com/wp-content/uploads/2016/02/New_Balance_black_logo.png",
+        name: "New Balance"
+    },
 ]
 
 export const categories = [
@@ -133,50 +143,7 @@ export const categories = [
 ]
 
 export const newProducts = [
-    {
-        id: 1,
-        name: "Tênis Corrida Adidas 4dfwd 2",
-        description: "O adidas 4DFWD 2 redefine a evolução, combinando a exclusiva inovação pioneira da entressola impressa em 3D com a nova estrutura do cabedal e o solado Continental para mais aderência. A entressola do adidas 4DFWD 2 se comprime e reduz as forças de frenagem, transformando a energia do impacto em impulso a cada passo. O resultado é uma corrida suave que desliza seus pés sobre o asfalto. O solado de borracha Continental aderente oferece tração em superfícies secas e molhadas, mantendo você em movimento em qualquer condição climática, e o novo ajuste do cabedal adidas PRIMEKNIT+ envolve os pés para melhorar a movimentação. Feito com uma série de materiais reciclados, o cabedal contém pelo menos 50% de conteúdo reaproveitado. Este produto representa apenas uma das nossas soluções para ajudar a acabar com os resíduos plásticos",
-        price: 1599.99,
-        sizes: ["36", "37", "38", "39", "40", "42"],
-        img: "https://i.ebayimg.com/00/s/MTAwMFgxMDAw/z/VuAAAOSwRL9hm4MD/$_57.png",
-        brandId: 1,
-        stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
-    },
-    {
-        id: 3,
-        name: "Tênis Ultra 4d",
-        description: "Todo dia é uma oportunidade de melhorar as suas expectativas, perspectivas e habilidades de corrida. O Ultra 4D foi codificado para ajudar nessa trajetória, começando com uma entressola 4D impressa em 3D que estabiliza a sua corrida. O amortecimento duradouro ajuda a ir mais longe, e o adidas PRIMEKNIT abraça os pés para mais suporte a cada passo dado. Feito com uma série de materiais reciclados, o cabedal contém pelo menos 50% de conteúdo reaproveitado. Este produto representa apenas uma das nossas soluções para ajudar a acabar com os resíduos plásticos.",
-        price: 1499.99,
-        sizes: ["36", "37", "38", "39", "40"],
-        img: "https://cdn.shopify.com/s/files/1/0550/3657/5853/products/Ultra_4D_Core_White-FX4089-0.png?v=1658841793&width=1024",
-        brandId: 1,
-        stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
-    },
-    {
-        id: 4,
-        name: "Tênis Pharrell Williams HU NMD",
-        description: "Pharrell Williams é conhecido por não aceitar limitações. Em colaboração com esse visionário, nossa mais recente coleção é sobre quebrar barreiras e ter expressão pessoal. Explore isso com este tênis adidas x Pharrell Williams HU NMD. A combinação de força do cabedal flexível adidas Primeknit com a entressola macia BOOST faz cada movimento parecer fácil.",
-        price: 1199.99,
-        sizes: ["36", "37", "38", "39", "40"],
-        img: "https://droper-media.s3.amazonaws.com/2522021142743214.png",
-        brandId: 1,
-        stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
-    },
-    {
-        id: 5,
-        name: "Tênis X9000l4 Heat.Rdy",
-        description: "Mantenha o ritmo durante a parte mais quente do dia. Este tênis de corrida adidas HEAT.RDY tem cabedal em mesh que recebe fluxo de ar refrescante em corridas de curta e média distâncias. A tecnologia Boost oferece incrível retorno de energia e conforto instantâneo para você seguir em frente. O cabedal adidas Primeknit envolve os pés com suporte adaptativo, melhorando a mobilidade. Feito com uma série de materiais reciclados, o cabedal contém pelo menos 50% de conteúdo reaproveitado. Este produto representa apenas uma de nossas soluções para ajudar a acabar com os resíduos plásticos.",
-        price: 899.99,
-        sizes: ["36", "37", "38", "39", "40"],
-        img: "https://martimx.vtexassets.com/arquivos/ids/1003823-800-800?v=638022688677530000&width=800&height=800&aspect=true",
-        brandId: 1,
-        stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
-    },
+
     {
         id: 6,
         name: "Tênis Nmd_V3",
@@ -199,6 +166,248 @@ export const newProducts = [
         stock: 20,
         paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
     },
+
+    {
+        id: 10,
+        name: "Tênis Ozelia",
+        description: "Devemos respeito à saúde dos oceanos no mundo. Vamos começar a avançar. Este tênis de corrida oferece todo o conforto e responsividade do Ultraboost com um grande bônus: é feito parcialmente com Parley Ocean Plastic. O cabedal adidas PRIMEKNIT envolve os pés e possui entressola BOOST com incrível retorno de energia. O sistema Linear Energy Push, integrado ao solado, aumenta a estabilidade, proporcionando mais responsividade que nunca.",
+        price: 699.99,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://www.courir.es/on/demandware.static/-/Sites-master-catalog-courir/default/dwc44aeaed/images/hi-res/001493080_101.png",
+        brandId: 1,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+    {
+        id: 11,
+        name: "Tênis Eqt Support 93",
+        description: "Lançado em 1993, o tênis adidas Equipment Support impactou instantaneamente o mundo da corrida com seu design envolvente na língua e o famoso Torsion System. A funcionalidade era sua maior prioridade, uma ideia que a famosa fabricante de canivetes Victorinox conhece bem. Marcando a nossa colaboração com essa marca de 130 anos, este tênis parte do conceito do EQT para explorar o mundo, sempre preparado para o que der e vier. Ele inclui bolso destacável, solado semitranslúcido e palmilha antibacteriana, sendo ideal para qualquer aventura. Você não precisa de mais nada.",
+        price: 999.99,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://www.thenextsole.com/storage/images/S79112.png",
+        brandId: 1,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+
+    {
+        id: 16,
+        name: "Tênis x Nike Air Adjust Force",
+        description: "Yoon Ahn atualiza o tênis de estilo clandestino que você desejava ver nas ruas. De couro de flor integral rico a detalhes de marca compartilhada que adicionam moeda ao seu passo, o Air Adjust Force x AMBUSH® permite que você dance a linha entre o estilo fora da quadra e o estilo da passarela. Mantivemos a alça removível no mediopé que tornou esse visual uma lenda - você pode até misturar e combinar para dar um charme extra ao seu ajuste. Quanto à cor, a colorway Light Madder Root e Burgundy Crush certamente trará o drop onde quer que você vá.",
+        price: 1899.99,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://www.soleretriever.com/_next/image?url=https%3A%2F%2Fsoleretriever.s3.amazonaws.com%2F702b2611-a855-4aaf-b03a-1883c6c9c759.png&w=1200&q=75",
+        brandId: 2,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        
+    },
+    {
+        id: 17,
+        name: "Tênis cano baixo x sacai Cortez 4.0",
+        description: "O design do NIKE CORTEZ é bastante respeitado nessa nova construção, ainda que a influência da SACAI esteja bastante clara. Ele vem sendo chamado de CORTEZ 4.0 e conta colarinho duplo, língua dupla, Swoosh duplo, contraforte duplo e cadarços duplos, que mantêm o efeito 3D que foi tão explorado nas colaborações anteriores.",
+        price: 2861.99,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://images.stockx.com/images/Nike-Vaporwaffle-sacai-Villain-Red-Neptune-Green.png?fit=fillbg=FFFFFFw=1200h=857fm=webpauto=compressdpr=2trim=colorupdated_at=1607102901q=75",
+        brandId: 2,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        
+    },
+    {
+        id: 19,
+        name: "SB Dunk Low Neckface",
+        description: "Conhecido por sua mentalidade macabra, o filho do skate Neckface dá vida ao seu estilo medonho e inspirado no heavy metal no SB Dunk Low. Sinônimo de SB e da paisagem do graffiti por décadas, o design celebra o lado positivo da má sorte com uma variedade de patches que levam você diretamente ao caderno de esboços do Grim Reaper.",
+        price: 1199.99,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://media.soleretriever.com/ae5af0be-8be7-4f1f-9015-9664a6fbd555.png",
+        brandId: 2,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        
+    },
+    {
+        id: 20,
+        name: "Nike Tênis Shox Ride 2 SP x Supreme",
+        description: "O Supreme Nike Shox Ride 2 começou a se revelar lentamente através das mídias sociais, revelando a marca Supreme nos pilares Shox. Quatro colorways foram oficialmente revelados - três padroes da Supreme e uma quarta combinação de azeite/volt. Todos apresentam uma construção clássica de malha e couro com forros de língua e calcanhar DURPLUSH e painéis de logotipo de borracha",
+        price: 3482.99,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://media.soleretriever.com/ecd65233-4b6a-4cec-a06b-b5d697cf8735.png",
+        brandId: 2,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        
+    },
+    {
+        id: 23,
+        name: "Nike x Stussy Air Force 1 Mid ",
+        description: "Crie um estilo marcante com esta colaboração da Nike com a Stüssy. A parte de cima em couro premium se combina com um forro em malha para oferecer o máximo de conforto. A marca icônica duplicada permite representar suas marcas favoritas. O couro viçoso oferece um look limpo, durável e sustentado. Marca original Stüssy na tira, no calcanhar e na ponta. Da costura resistente a materiais impecáveis e um design de forma da sola, ele oferece um estilo durável. Desenvolvido originalmente para o treino de basquete, o amortecimento Nike Air proporciona um conforto duradouro, enquanto a boca e a língua almofadadas garantem uma passada suave.",
+        price: 2291.99,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://image.goat.com/1000/attachments/product_template_pictures/images/072/332/157/original/878608_00.png.png",
+        brandId: 2,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        
+    },
+    
+    {
+        id: 25,
+        name: "Nike x Drake Hot Step Air Terra Nocta White",
+        description: "Criado em parceria com a marca de vestuário de Drake, o NOCTA x Nike Hot Step Air Terra 'White' faz uso de uma parte superior de couro com acabamento em branco. Uma série de linhas diagonais costuradas, juntamente com detalhes perfurados, embelezam cada um dos painéis laterais do tênis. A marca NOCTA com joias é exibida no topo da língua, enquanto os mini-Swooshes cromados adornam a biqueira e o calcanhar lateral. O tênis tem uma entressola de espuma branca combinando, com paredes laterais esculpidas e uma unidade Air-sole exposta em amarelo sob o calcanhar.",
+        price: 2163.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://www.soleretriever.com/_next/image?url=https%3A%2F%2Fmedia.soleretriever.com%2F250cbf0a-077f-41cd-99ce-d47222e76c6a.png&w=1200&q=75",
+        brandId: 2,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        
+    },
+    {
+        id: 30,
+        name: "Nike Dunk High X Ambush Deep Royal",
+        description: "Projetado em parceria com a marca de Tóquio dirigida por Yoon Ahn, o AMBUSH x Nike Dunk High ‘Deep Royal’ oferece uma visão estilizada da silhueta vintage. A parte superior toda em couro combina uma base branca nítida com sobreposições contrastantes em azul royal e um Swoosh preto de grandes dimensões inspirado nos escapamentos de motocicletas, com uma cauda que se estende além do calcanhar. A marca AMBUSH pousa em um contraforte externo de TPU e na etiqueta tecida que adorna uma língua de espuma exposta. O cano alto é montado em uma cupsole de borracha padrão, destacada por paredes laterais brancas e uma sola azul royal.",
+        price: 2547.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://image.goat.com/1000/attachments/product_template_pictures/images/055/222/887/original/721858_00.png.png",
+        brandId: 2,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+    {
+        id: 31,
+        name: "Air Jordan 5 Retro Dark Concord",
+        description: "Traga um pouco de harmonia ao seu ajuste com esta nova colorway AJ5. Toques sutis de Dark Concord sobre o couro branco farão você se sentir como a realeza, enquanto uma língua refletiva e uma sola tipo gelo revelam joias escondidas. Detalhes impecáveis ??do original, como as aberturas laterais, a entressola pontiaguda e a trava de renda transparente, unem tudo, dando a esses tênis clássicos aquele fascínio cortante",
+        price: 1899.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://cdn.sneakersquad.nl/uploads/sneakers/DD0587-141.png?auto=compress%2Cformat&h=400&ixlib=php-3.3.1&trim=auto&trim-sd=1&w=1000",
+        brandId: 3,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+    {
+        id: 32,
+        name: "Air Jordan 3 Retro ",
+        description: "É o retorno de uma lenda: o design Tinker Hatfield que solidificou o relacionamento de MJ com a Nike retorna à sua forma original de 1988. Detalhes em Fire Red e couro preto e cinza ferro rachado na ponta do pé e no calcanhar acenam para o lançamento icônico, enquanto NIKE AIR escrito na parte de trás traz um verdadeiro apelo vintage. Falando em Air, você pode contar com o amortecimento comprovado sob os pés para mantê-lo em movimento.",
+        price: 1899.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://d2r9epyceweg5n.cloudfront.net/stores/002/314/448/products/398614_111-png1-5b1d863f5cc23ad96f16595804123178-1024-1024.png",
+        brandId: 3,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+    {
+        id: 33,
+        name: "Air Jordan 4 Retro White Oreo",
+        description: "O Air Jordan 4 Retro 'White Oreo' apresenta um tema de design que lembra o 'Oreo' AJ4 original de 1999. A parte superior de couro preto caído do calçado mais antigo é substituída por um acabamento branco, embora os ilhós moldados salpicados em Tech Grey permaneçam o mesmo. O matiz neutro é repetido no logotipo do salto do Jumpman e na sola com amortecimento de ar encapsulado no antepé e uma unidade visível sob o calcanhar. Um segundo Jumpman adorna a língua em um pop contrastante de Fire Red",
+        price: 6465.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://images.tcdn.com.br/img/img_prod/938519/tenis_air_jordan_4_retro_white_oreo_2587_1_bfae5f7cea7510e3612e383c1b25c775_20210812081815.png",
+        brandId: 3,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+    {
+        id: 34,
+        name: "Air Jordan 14 Retro SE",
+        description: "Transporte-se de volta ao início dos anos 2000 com esta combinação de cores clássica. Forro extraquente e couro texturizado mantêm você estiloso para a estação. Seu toque refinado de inverno permanece enraizado na linhagem Air Jordan. Você está preparado para o inverno?",
+        price: 3355.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://image.goat.com/transform/v1/attachments/product_template_pictures/images/000/036/055/original/487524_070.png.png?action=crop&width=750",
+        brandId: 3,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+    
+    {
+        id: 34,
+        name: "Jordan 6 Rings 'Hare'",
+        description: "O Jordan 6 Rings é um tênis híbrido comemorativo que combina elementos dos seis tênis Air Jordan exclusivos que MJ usou para vencer seus seis campeonatos da NBA - daí o nome épico do modelo. Historicamente, o 6 Rings sempre foi um modelo divisivo entre os colecionadores da Jordan devido ao seu design miscelâneo e, ocasionalmente, cores berrantes.",
+        price: 2163.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://image.goat.com/transform/v1/attachments/product_template_pictures/images/079/300/673/original/484178_00.png.png?action=crop&width=750",
+        brandId: 3,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },    
+    {
+        id: 35,
+        name: "Air Jordan 13 Retro Masculino",
+        description: "O Air Jordan 13 Retro traz de volta os inesquecíveis tênis de jogo que Michael Jordan usou durante a temporada de 97-98 rumo ao seu 6º título de campeonato. Todos os detalhes clássicos estão presentes, como a sobreposição acolchoada, a icônica entressola esculpida e o olho holográfico.",
+        price: 1499.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://images.tcdn.com.br/img/img_prod/938519/tenis_air_jordan_13_retro_playoff_2011_2913_1_f77d04a8eac964cb366c331565ca90d7_20210812081825.png",
+        brandId: 3,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },    
+    {
+        id: 36,
+        name: "Air Jordan 6 Retro ",
+        description: "Uma colorway que está no cofre há mais de 20 anos está voltando forte nesta estação. Mantendo as especificações OG, o Air Jordan 6 Midnight Navy, lançado pela primeira vez como retrô em 2000, é colorido de maneira familiar para os fãs do AJ6. Uma parte superior de couro premium totalmente branca permite uma sobreposição nítida com detalhes Midnight Navy na entressola, Jumpman bordado, no calcanhar e na língua. Sua sola glacial e translúcida finaliza o estilo com um toque cool.",
+        price: 1499.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://image.goat.com/transform/v1/attachments/product_template_pictures/images/001/965/999/original/543390_008.png.png?action=crop&width=750",
+        brandId: 3,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },    
+    {
+        id: 37,
+        name: "Air Jordan 1 Zoom Confort Masculino ",
+        description: "O ícone do estilo ficou ainda mais confortável. O Air Jordan 1 Zoom Cmft recria o primeiro Air Jordan com amortecimento leve, perfil baixo e elementos que melhoram a utilização. Os couros e tecidos na parte de cima proporcionam uma sensação aconchegante. A boca forrada e acolchoada envolve o calcanhar para um ajuste seguro",
+        price: 1399.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://images.tcdn.com.br/img/img_prod/938519/tenis_air_jordan_1_high_zoom_comfort_olive_aura_3127_1_f255764071b6db8aeca124455477f590.png",
+        brandId: 3,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },    
+    {
+        id: 38,
+        name: "Air Jordan Legacy 312 Low Masculino ",
+        description: "O Air Jordan Legacy 312 Low homenageia o legado de Michael Jordan com menção ao código de área 312 de Chicago. O design cria uma versão moderna dos icônicos elementos Jordan. Couro, material sintético e/ou tecido no cabedal com faixa no mediopé para ajuste seguro. Unidade Air-Sole visível no calcanhar para mais amortecimento.",
+        price: 1399.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://images.tcdn.com.br/img/img_prod/938519/tenis_jordan_legacy_312_low_tech_grey_cement_1885_1_f1c46957903d06178e3e7e99a8089729_20210812081459.png",
+        brandId: 3,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },    
+    {
+        id: 39,
+        name: "Air Jordan 1 Low SE Spades",
+        description: "O Air Jordan 1 Low SE Spades se inspira em um jogo de cartas que há muito é popular entre os atletas da NBA. Uma reminiscência do verso de cartas de jogar, uma impressão paisley em relevo é aplicada ao painel de um quarto de cor carmesim e ao envoltório do dedo do pé. Couro branco contrastante é utilizado na biqueira, no eyestay, na gola e no calcanhar, este último acentuado com um logotipo bordado da Wings. Um Swoosh metálico dourado brilhante é acompanhado por um bordado 'K' e 'Q' no antepé lateral do sapato esquerdo e direito. Um ícone de espada na lingueta tecida completa a homenagem ao cartão de jogo.",
+        price: 2924.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw5aO7QA55LNVNRi6DTjX5rL3JB6hEKvi5MW4CqaoNCxbdn3yI91V7I6Ay10oMtahpJXM&usqp=CAU",
+        brandId: 3,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+    {
+        id: 40,
+        name: "Tênis Air Jordan 1 Low 'Mystc Green' ",
+        description: "Chegando na aparência tradicional de cores bloqueadas, o Jordan 1 Low Black Mystic Green é pintado em tons de verde, preto e branco. Inspirando-se nas silhuetas de skate da Nike, uma parte superior de couro e camurça é recebida com uma língua de veludo para um visual que é feito para virar a cabeça. Um Jumpman bordado atinge a língua, enquanto um motivo de bola e asas costuradas está presente ao redor do calcanhar, completando o design atemporal.",
+        price: 2924.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://images.tcdn.com.br/img/img_prod/938519/tenis_air_jordan_1_low_island_green_1589_1_15f915b5df447bd3739da849f7ddd2cd_20210812081446.png",
+        brandId: 3,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    }, 
+    {
+        id: 41,
+        name: "Off-White x Air Jordan 2 Low White and Varsity Red",
+        description: "Quando o Air Jordan 2 estreou em 1986, foi o primeiro tênis a trazer detalhes de luxo para uma silhueta esportiva. Fabricado na Itália, os pares OG apresentam um visual premium que rapidamente lhes rendeu um lugar icônico na história da Air Jordan. Inspirado pela herança e impacto deste lendário tênis, o designer da Off-White ™ Virgil Abloh agora adiciona ao legado sua própria homenagem pessoal ao Air Jordan 2 Low.",
+        price: 7572.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://5.kixify.com/sites/default/files/imagecache/product_full/product/2021/11/12/p_33471126_192022866_526021.png",
+        brandId: 3,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+
 ]
 
 export const popularProducts = [
