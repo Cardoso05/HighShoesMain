@@ -407,7 +407,105 @@ export const newProducts = [
         stock: 20,
         paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
     },
-
+    {
+        id: 42,
+        name: "Aimé Leon Dore x 550 Brown ",
+        description: "O Aimé Leon Dore x New Balance 550 'Brown' reúne as marcas parceiras responsáveis por reviver o há muito esquecido sapato de argola originalmente lançado em 1989. Este par utiliza uma parte superior de couro branco com uma sobreposição microperfurada no mediopé e malha acolchoada ao redor da gola. Acentos marrons contrastantes incluem uma etiqueta de língua tecida de marca conjunta e um logotipo 'N' de couro rachado no painel lateral. Um acabamento esbranquiçado envelhecido é aplicado à entressola de borracha, com uma cunha de EVA exposta no lado medial e uma sola de borracha marrom sob os pés.meiro tênis a trazer detalhes de luxo para uma silhueta esportiva. Fabricado na Itália, os pares OG apresentam um visual premium que rapidamente lhes rendeu um lugar icônico na história da Air Jordan. Inspirado pela herança e impacto deste lendário tênis, o designer da Off-White ™ Virgil Abloh agora adiciona ao legado sua própria homenagem pessoal ao Air Jordan 2 Low.",
+        price: 4646.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://www.thenextsole.com/storage/images/BB550ALE.png",
+        brandId: 4,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+    {
+        id: 43,
+        name: "991 Aime Leon Dore MiUK Grey",
+        description: "Como parte da linha Made In UK da New Balance, o New Balance 991 Aimé Leon Dore Grey oferece qualidade premium e conforto em uma paleta de tons naturais. Ele vem com uma parte superior de malha creme, sobreposições de camurça cinza peluda e debrum de camurça verde contrastante. Na base, uma sola ENCAP macia oferece conforto e suporte.",
+        price: 4646.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://cdn.sneakerbaron.nl/uploads/2021/02/10015655/new-balance-991-greynavy-m991sgn-55-700x343.png",
+        brandId: 4,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+    {
+        id: 44,
+        name: "Salehe Bembury x New Balance 574 YURT",
+        description: "Os tênis '547' da New Balance receberam uma atualização distinta do designer de calçados Salehe Bembury. Eles são projetados com uma sola exagerada e construção de malha aberta e detalhados com um apito de segurança de plástico moldado no calcanhar.",
+        price: 2112.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqrSzH42nTOdCpiZ-CEphdSm1F0X5oAKSiMiTMXLBlnerZ1CXT-CWROiYYMOPZN3tsxNY&usqp=CAU",
+        brandId: 4,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+    {
+        id: 45,
+        name: "ALD x New Balance 650R ",
+        description: "Depois de reformular e dar nova vida ao clássico P550 Basketball Oxford fora de quadra, New Balance e Aimé Leon Dore voltam suas atenções para o cano alto. Inspirando-se no 550, o 650 adapta as proporções descomunais do modelo original de quadra, ao mesmo tempo em que apresenta gola bufante e pespontos e detalhe em couro cru, criando o tênis de basquete completo.",
+        price: 3659.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://image.goat.com/transform/v1/attachments/product_template_pictures/images/070/334/300/original/919958_00.png.png?action=crop&width=750",
+        brandId: 4,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+    {
+        id: 46,
+        name: "Made in USA 990v3 Levi's",
+        description: "New Balance e Levi's® se unem mais uma vez para criar uma nova versão de um clássico MADE in USA: o 990v3. Sobreposições de camurça de vaca e camurça peluda ficam sobre as camadas de denim da Levi's em toda a parte superior",
+        price: 4973.00,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ797sLu0Z9RxYLehYIHwQo9i0wTMhfkPnb9iWqDBLIhhFciV227LVcDqBrhUVww0kuxmg&usqp=CAU",
+        brandId: 4,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+    {
+        id: 47,
+        name: "Tênis New Balance 9060 Casual",
+        description: "O novo New Balance 9060 distorce e exagera elementos de design retirados da clássica série 990. Através desta inspiração a construção do sneaker se torna icônica, com uma pegada futurista e ousada utilizando-se de aspectos experimentais e de tecnologia visual da era dos anos 2000. Com diversas peças no cabedal, a malha premium e parte superior em nobuck são equipadas em uma paleta de tons suaves, no contraforte uma peça em TPU amplifica o design. A entressola oversized com amortecimento exclusivo ABZORB garante máximo conforto durante o uso e o acolchoamento interno foi projetado com uma textura macia e agradável.",
+        price: 1149.99,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://www.pricerunner.com/product/1200x630/3006955013/New-Balance-9060.jpg",
+        brandId: 4,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+    {
+        id: 48,
+        name: "New Balance Kawhi 2 Conversations Amongst Us",
+        description: "Projetado com o bicampeão da NBA e MVP das finais da NBA, Kawhi Leonard junto ao designer e diretor criativo Joe Freashgoods, o Kawhi II Conversations Amongst Us é a fusão perfeita entre estilo e performance. Joe Freshgoods veio para somar nesta execução que faz referência a história e cultura da comunidade negra norte americana. Nesta campanha, Kawhi e Joe se juntaram para revisitar as memórias e a conexão entre eles e sua comunidade, trazendo as mesmas cores e detalhes das recentes criações de Joe nos modelos New Balance BB550 e 2002R.",
+        price: 1299.99,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://cdn.sneakerbaron.nl/uploads/2022/05/17032208/New-Balance-KAWHI-2-Ocean-Blue-Orange-BBKLSSD2-400x217.png",
+        brandId: 4,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+    {
+        id: 49,
+        name: "New Balance SuperComp Trainer Corrida Feminino",
+        description: "Com design e logótipo explorados ao máximo neste modelo, o cabedal recebe uma malha de Engineered Knit elegante e possui uma língua elástica reforçada na parte superior, para uma sensação mais confortável quando estiver desempenhando sua performance nas ruas.",
+        price: 1499.99,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://www.rodrigoroehniss.com.br/wp-content/uploads/2021/06/RC_ELITE_V2_ABERTURA_ARTIGO-removebg-preview.png",
+        brandId: 4,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
+    {
+        id: 50,
+        name: "New Balance 1080v11 Corrida Masculino ",
+        description: "Sucessor do icônico New Balance RC Elite, o Fuelcell SuperComp Elite V3 foi projetado para máxima performance e desempenho. O SC Elite V3 é ideal para corredores e maratonistas que nunca desistem. A entressola composta por dupla camada de espuma com tecnologia Fuelcell somada a placa de fibra de carbono oferece um retorno de energia impressionante com a inovadora tecnologia Energy Arc.",
+        price: 1899.99,
+        sizes: ["36", "37", "38", "39", "40"],
+        img: "https://image.goat.com/transform/v1/attachments/product_template_pictures/images/078/421/186/original/MRCELNY3.png.png?action=crop&width=750",
+        brandId: 4,
+        stock: 20,
+        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+    },
 ]
 
 export const popularProducts = [
