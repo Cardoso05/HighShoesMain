@@ -13,6 +13,11 @@ const InputRoot = styled.input`
   ::placeholder {
     color: #595959;
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    filter: opacity(50%);
+  }
 `
 
 export const Input = forwardRef(({ ...props }, ref) => (

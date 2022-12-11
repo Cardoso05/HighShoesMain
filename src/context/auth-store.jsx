@@ -164,6 +164,13 @@ export const AuthStoreProvider = ({ children, private_key, storage_key = "@highs
     }
   }, [generateAccessToken, handleSetSignedIn, private_key, storage_key])
 
+  const logout = () => {
+    localStorage.removeItem(`${storage_key}:access-token`)
+    localStorage.removeItem(`${storage_key}:refresh-token`)
+    setSignedIn(null)
+    setLoggedUser(null)
+  }
+
   useEffect(() => {
     isSignedIn()
   }, [handleSetSignedIn, isSignedIn, private_key, storage_key])
@@ -172,6 +179,7 @@ export const AuthStoreProvider = ({ children, private_key, storage_key = "@highs
     <AuthStore.Provider value={{
       isSignedIn,
       signedIn,
+      logout,
       login,
       register,
       user: loggedUser,

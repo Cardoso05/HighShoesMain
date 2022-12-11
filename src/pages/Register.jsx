@@ -5,7 +5,7 @@ import { Button } from "../components/button"
 import { Input } from "../components/input"
 import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "../context/auth-store"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const Wrapper = styled.main`
   width: 100%;
@@ -17,7 +17,7 @@ const Wrapper = styled.main`
 const Container = styled.section`
   background: #1A1A1A;
 
-  width: 600px;
+  width: 700px;
   margin: auto;
 
   padding: 50px;
@@ -26,10 +26,11 @@ const Container = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 50px;
 `
 
 const Form = styled.form`
-  width: 200px;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
@@ -38,6 +39,7 @@ const Form = styled.form`
 `
 
 const GradientCircle = styled.div`
+  flex-shrink: 0;
   --size: 200px;
   width: var(--size);
   height: var(--size);
@@ -58,6 +60,10 @@ export default function Login() {
   const nameRef = useRef(null)
   const emailRef = useRef(null)
   const passwordRef = useRef(null)
+
+  const [cep, setCep] = useState("")
+  const streetRef = useRef(null)
+  const bairroRef = useRef(null)
 
   const handleSignIn = async (event) => {
     event.preventDefault()
@@ -83,6 +89,37 @@ export default function Login() {
     navigate("/perfil")
   }
 
+  useEffect(() => {
+    const id = setTimeout(async () => {
+      const formattedCep = cep.replace(/[^0-9]/, "");
+				
+      // Validação do CEP; caso o CEP não possua 8 números, então cancela
+      // a consulta
+      if(formattedCep.length !== 8){
+        return false;
+      }
+				
+      const url = `https://viacep.com.br/ws/${formattedCep}/json`;
+
+      const response = await fetch(url)
+      try {
+        const { bairro, logradouro } = await response.json()
+        
+        streetRef.current.value = logradouro
+        bairroRef.current.value = bairro
+      } catch (error) {
+        setError("Não consegui buscar seu endereço")
+        
+        streetRef.current.disabled = false
+        bairroRef.current.disabled = false
+      }
+
+      // Send Axios request here
+    }, 2000)
+
+    return () => clearTimeout(id)
+  }, [cep])
+
   return (
     <Wrapper>
       <Container>
@@ -96,6 +133,19 @@ export default function Login() {
           <Input onFocus={() => setError("")} type="text" placeholder="Nome" ref={nameRef} />
           <Input onFocus={() => setError("")} type="email" placeholder="E-mail" ref={emailRef} />
           <Input onFocus={() => setError("")} type="password" placeholder="Senha" ref={passwordRef} />
+          <Input
+            onFocus={() => setError("")} 
+            onChange={event => setCep(event.target.value)}
+            value={cep} 
+            type="text" 
+            placeholder="CEP (números apenas)" 
+          />
+
+          <div style={{ display: "flex", gap: "20px", alignItems: "center", justifyContent: "space-between" }}>
+            <Input style={{ width: "100%" }} disabled type="text" placeholder="Rua" ref={streetRef} />
+            <Input style={{ width: "100%" }} disabled type="text" placeholder="Bairro" ref={bairroRef} />
+          </div>
+          
           <Button>
             <strong style={{ lineHeight: "11px" }}>CRIAR CONTA</strong> <ArrowRight />
           </Button>

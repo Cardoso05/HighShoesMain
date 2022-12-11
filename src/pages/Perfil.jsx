@@ -4,8 +4,13 @@ import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"
 
 export default function Perfil() {
-  const { isSignedIn, user } = useAuth()
+  const { isSignedIn, user, logout } = useAuth()
   const navigate = useNavigate()
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login")
+  }
 
   useEffect(() => {
     const signedIn = isSignedIn()
@@ -20,6 +25,7 @@ export default function Perfil() {
       <h1>hello world</h1>
       {user?.name}
       {user?.email}
+      <button onClick={handleLogout}>logout</button>
     </div>
   )
 }
