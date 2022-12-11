@@ -11,6 +11,7 @@ import Perfil from "./pages/Perfil";
 import Brands from "./pages/brands";
 import Brand from "./pages/brand";
 import About from "./pages/about";
+import Success from "./pages/success";
 
 import NotFound from "./pages/Not-found"
 
@@ -46,6 +47,7 @@ export const Router = () => {
         } />
 
         <Route path="/perfil" element={<Perfil />} />
+        <Route path="/success" element={<Success />} />
 
         <Route path="/marcas" element={<Brands />} />
 

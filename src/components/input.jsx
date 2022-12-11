@@ -5,8 +5,9 @@ const InputRoot = styled.input`
   width: 100%;
 
   padding: 8px 16px;
-  color: #000;
-  background: #D2D2D2;
+  /* background: #D2D2D2; */
+  color: #fff;
+  background: #373737;
   border-radius: 999px;
   font-size: 14px;
   

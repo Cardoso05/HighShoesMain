@@ -2,6 +2,7 @@ import { Router } from "./router"
 
 import { CartStoreProvider } from "./context/cart-store"
 import { AuthStoreProvider } from "./context/auth-store"
+import { OrderStoreProvider } from "./context/order-store"
 import { SkeletonTheme } from "react-loading-skeleton"
 
 const private_key = {
@@ -14,7 +15,9 @@ export default function App() {
     <SkeletonTheme baseColor="#222222" highlightColor="#464646">
       <CartStoreProvider>
         <AuthStoreProvider private_key={private_key}>
-          <Router />
+          <OrderStoreProvider>
+            <Router />
+          </OrderStoreProvider>
         </AuthStoreProvider>
       </CartStoreProvider>
     </SkeletonTheme>

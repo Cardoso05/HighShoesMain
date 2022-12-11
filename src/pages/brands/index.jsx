@@ -1,8 +1,5 @@
-import { KeyboardArrowDown } from "@material-ui/icons"
-import { useMemo, useState } from "react"
 import { Link as RouterLink } from "react-router-dom"
 import styled from "styled-components"
-import { Product } from "../../components/product"
 
 import { brands } from "../../data"
 import { slugify } from "../../utils/slugify"

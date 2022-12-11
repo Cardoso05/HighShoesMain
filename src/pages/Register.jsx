@@ -71,15 +71,24 @@ export default function Login() {
     const name = nameRef.current.value
     const email = emailRef.current.value
     const password = passwordRef.current.value
+    const CEP = cep.replace(/[^0-9]/, "")
 
-    if(!name || !email || !password) {
+    const street = streetRef.current.value
+    const bairro = bairroRef.current.value
+
+    if(!name || !email || !password || !CEP) {
       return setError("Prencha os campos!")
     }
 
     const result = await register({
       name,
       email,
-      password
+      password,
+      details: {
+        cep: CEP,
+        street,
+        bairro
+      }
     });
 
     if(!result.ok) {

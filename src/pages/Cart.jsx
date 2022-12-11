@@ -3,24 +3,26 @@ import { Add, Remove } from "@material-ui/icons"
 import styled from 'styled-components'
 import { useNavigate } from "react-router-dom"
 
-import { loadStripe } from '@stripe/stripe-js';
+// import { loadStripe } from '@stripe/stripe-js';
 
 import { useCart } from "../context/cart-store"
 import { useAuth } from "../context/auth-store"
+import { useOrders } from "../context/order-store"
 
 import { currencyFormatter } from "../components/product"
 import { Button } from "../components/button"
+import Correios from "node-correios";
 
 
-let stripePromise;
+// let stripePromise;
 
-const getStripe = () => {
-  if (!stripePromise) {
-    stripePromise = loadStripe("pk_test_51JBlYRL2PaVveUDb3toqXDpVlHiBr5TEospTxhqKvFstqUiLPZWkv4IRyDcA3yP9PQfPOuyyYuIqgvdVpM1gTdnl00X41b223d");
-  }
+// const getStripe = () => {
+//   if (!stripePromise) {
+//     stripePromise = loadStripe("pk_test_51JBlYRL2PaVveUDb3toqXDpVlHiBr5TEospTxhqKvFstqUiLPZWkv4IRyDcA3yP9PQfPOuyyYuIqgvdVpM1gTdnl00X41b223d");
+//   }
 
-  return stripePromise;
-};
+//   return stripePromise;
+// };
 const Container = styled.div``
 
 const Wrapper = styled.div`
@@ -126,12 +128,14 @@ const SummaryItem = styled.div`
 const SummaryItemText = styled.span``
 
 const SummaryItemPrice = styled.span``
+const correios = new Correios();
 
 const Cart = () => {
     const navigate = useNavigate()
     
-    const { signedIn, requireSignIn } = useAuth()
-    const { cart, addItemToCart, removeItemFromCart, products, setProducts } = useCart()
+    const { addOrder } = useOrders()
+    const { signedIn, requireSignIn, user } = useAuth()
+    const { cart, addItemToCart, removeItemFromCart, products, setProducts, emptyCart } = useCart()
     const [estimatedShipping, setEstimatedShipping] = useState(0)
 
     const cartWithData = useMemo(() => {
@@ -169,12 +173,42 @@ const Cart = () => {
     }, [cartWithData])
 
     useEffect(() => {
-        const calculateEstimatedShipping = () => {
-            setEstimatedShipping(15)
+        const calculateEstimatedShipping = async () => {
+            // get user address
+            if(!signedIn) {
+                return
+            }
+
+            if(!user) {
+                return
+            }
+
+            try {
+                const [result] = await correios.calcPreco({
+                    sCepOrigem: "05311900",
+                    nCdServico: "04014",
+                    sCepDestino: user.details.cep,
+                    nVlPeso: 0.4,
+                    nCdFormato: 1,
+                    nVlComprimento: 50,
+                    nVlAltura: 30,
+                    nVlLargura: 50,
+                    nVlDiametro: 50
+                })
+
+                const [reais, centavos] = result.Valor.split(",")
+                const total = Number(reais) + (Number(centavos) / 100)
+
+                setEstimatedShipping(total)
+            } catch (error) {
+                console.log("Erro no cálculo do frete")
+                console.error(error)
+            }
+            // setEstimatedShipping(15)
         }
 
         calculateEstimatedShipping()
-    }, [])
+    }, [signedIn, user])
 
     const handleFormSubmit = useCallback(async (event) => {
         event.preventDefault()
@@ -221,21 +255,33 @@ const Cart = () => {
                 quantity: qtd
             }))
 
-        const checkoutOptions = {
-            lineItems,
-            mode: "payment",
-            successUrl: `${window.location.origin}/success`,
-            cancelUrl: `${window.location.origin}/checkout`
-        };
+        cartWithData.forEach(({ name, price }) => {
+            addOrder({
+                userId: user.id,
+                name,
+                price
+            })
+        })
 
-        const stripe = await getStripe();
-        const { error } = await stripe.redirectToCheckout(checkoutOptions);
-        console.log("Stripe checkout error", error);
+        // const checkoutOptions = {
+        //     lineItems,
+        //     mode: "payment",
+        //     successUrl: `${window.location.origin}/success?userId=${user.id}`,
+        //     cancelUrl: `${window.location.origin}/checkout`
+        // };
 
-        // emptyCart({})
+        // const stripe = await getStripe();
+        // const { error } = await stripe.redirectToCheckout(checkoutOptions);
         
-        // navigate("/")
-    }, [cart, cartWithData, navigate, products, requireSignIn, setProducts, signedIn])
+        // if(error) {
+        //     console.log("Stripe checkout error", error);
+        //     return
+        // }
+
+        emptyCart({})
+        
+        navigate(`/success?userId=${user.id}`)
+    }, [addOrder, cart, cartWithData, emptyCart, navigate, products, requireSignIn, setProducts, signedIn, user.id])
 
     return (
         <Container>
@@ -304,7 +350,17 @@ const Cart = () => {
 
                         <SummaryItem>
                             <SummaryItemText>Estimated Shipping</SummaryItemText>
-                            <SummaryItemPrice>{currencyFormatter.format(estimatedShipping)}</SummaryItemPrice>
+
+                            {estimatedShipping === 0
+                                ? (
+                                    <SummaryItemPrice>
+                                        faça login
+                                    </SummaryItemPrice>
+                                )
+                                : (
+                                    <SummaryItemPrice>{currencyFormatter.format(estimatedShipping)}</SummaryItemPrice>
+                                )
+                            }
                         </SummaryItem>
 
                         <SummaryItem type="total">

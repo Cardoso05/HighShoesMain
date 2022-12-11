@@ -10,19 +10,41 @@ export const useAuth = () => {
 
 const users = new Map()
 
-users.set("vitor@gmail.com", {
+users.set("312324wedddfwerere", {
   name: "vitor",
+  id: "312324wedddfwerere",
   email: "vitor@gmail.com",
-  password: "$2a$10$lLObXqsA7rCfGVmQJcO/H.aTjNm0EtNHqDUsRTkdYQY9Npe6CEilq"
+  password: "$2a$10$lLObXqsA7rCfGVmQJcO/H.aTjNm0EtNHqDUsRTkdYQY9Npe6CEilq",
+  details: {
+    cep: "04689160",
+    street: "Rua Quararibéia",
+    bairro: "Vila Isa"
+  }
 })
 
 export const AuthStoreProvider = ({ children, private_key, storage_key = "@highshoes" }) => {
   const [signedIn, setSignedIn] = useState(false)
   const [loggedUser, setLoggedUser] = useState(null)
+
+  const findUserByEmail = async (email) => {
+    const usersArray = [...users]
+      .map(([_, value]) => value);
+    
+    return usersArray.find(user => user.email === email)
+  }
+
+  async function createID() {
+    try {
+      const ID = sign({ createdAt: new Date().getTime() }, private_key.access)
+      return [ID, null]
+    } catch (error) {
+      return [null, error]
+    }
+  }
   
-  const generateAccessToken = useCallback(({ email }) => {
+  const generateAccessToken = useCallback(({ id }) => {
     const payload = {
-      email
+      id
     }
 
     const access_token = sign({ payload }, private_key.access, {
@@ -32,9 +54,9 @@ export const AuthStoreProvider = ({ children, private_key, storage_key = "@highs
     return access_token
   }, [private_key])
 
-  const generateRefreshToken = useCallback(({ email }) => {
+  const generateRefreshToken = useCallback(({ id }) => {
     const payload = {
-      email
+      id
     }
 
     const token = sign({ payload }, private_key.refresh, {
@@ -56,7 +78,7 @@ export const AuthStoreProvider = ({ children, private_key, storage_key = "@highs
   }, [generateAccessToken, generateRefreshToken, storage_key])
 
   const login = async ({ email, password }) => {
-    const user = await users.get(email)
+    const user = await findUserByEmail(email)
 
     if(!user) {
       return {
@@ -86,7 +108,7 @@ export const AuthStoreProvider = ({ children, private_key, storage_key = "@highs
     }
   }
 
-  const register = async ({ name, email, password }) => {
+  const register = async ({ name, email, password, details }) => {
     const user = users.has(email)
 
     if(user) {
@@ -97,14 +119,17 @@ export const AuthStoreProvider = ({ children, private_key, storage_key = "@highs
 
     try {
       const hashedPassword = await hash(password, 10)
+      const id = await createID()
 
       const newUser = {
+        id,
         name,
         email,
-        password: hashedPassword
+        password: hashedPassword,
+        details
       }
 
-      users.set(email, newUser)
+      users.set(id, newUser)
 
       await handleSetSignedIn(newUser)
     } catch (error) {
@@ -122,7 +147,7 @@ export const AuthStoreProvider = ({ children, private_key, storage_key = "@highs
     return "/login?to=checkout"
   }
   
-  const isSignedIn = useCallback(() => {
+  const isSignedIn = useCallback(async () => {
     const access_token = localStorage.getItem(`${storage_key}:access-token`)
 
     if(!access_token) {
@@ -134,9 +159,9 @@ export const AuthStoreProvider = ({ children, private_key, storage_key = "@highs
     try {
       // validate ACCESS token
       const verifiedToken = verify(access_token, private_key.access)
-      const user = users.get(verifiedToken.payload.email)
+      const user = users.get(verifiedToken.payload.id)
 
-      handleSetSignedIn(user)
+      await handleSetSignedIn(user)
       return true
     } catch (error) {
       // validate error thrown
@@ -171,6 +196,20 @@ export const AuthStoreProvider = ({ children, private_key, storage_key = "@highs
     setLoggedUser(null)
   }
 
+  const editUser = async (id, data) => {
+    const user = users.get(id)
+
+    if(!user) {
+      return {
+        message: "Não achei esse usuário"
+      }
+    }
+
+    const newUser = { ...user, ...data }
+    users.set(id, newUser)
+    await handleSetSignedIn(newUser)
+  }
+
   useEffect(() => {
     isSignedIn()
   }, [handleSetSignedIn, isSignedIn, private_key, storage_key])
@@ -183,7 +222,8 @@ export const AuthStoreProvider = ({ children, private_key, storage_key = "@highs
       login,
       register,
       user: loggedUser,
-      requireSignIn
+      requireSignIn,
+      editUser
     }}>
       {children}
     </AuthStore.Provider>
