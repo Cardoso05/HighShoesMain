@@ -281,7 +281,7 @@ const Cart = () => {
         emptyCart({})
         
         navigate(`/success?userId=${user.id}`)
-    }, [addOrder, cart, cartWithData, emptyCart, navigate, products, requireSignIn, setProducts, signedIn, user.id])
+    }, [addOrder, cart, cartWithData, emptyCart, navigate, products, requireSignIn, setProducts, signedIn, user])
 
     return (
         <Container>

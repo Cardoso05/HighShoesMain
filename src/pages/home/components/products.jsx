@@ -42,7 +42,7 @@ export const Products = ({ products, loading = true }) => {
             {loading ? (
               <Skeleton width={200} height={200} />
             ) : (
-              <Image to={`/marcas/${slugify(name)}`}>
+              <Image to={`/produtos/${slugify(name)}`}>
                 <img src={img} alt="" />
               </Image>
             )}
@@ -50,7 +50,7 @@ export const Products = ({ products, loading = true }) => {
         ))}
       </ul>
 
-      <Button as={RouterLink} to="/products" style={{ width: "max-content" }}>
+      <Button as={RouterLink} to="/produtos" style={{ width: "max-content" }}>
         Ver Produtos <ArrowRight />
       </Button>
     </Section>    
