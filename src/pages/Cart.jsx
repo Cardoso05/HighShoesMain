@@ -3,7 +3,7 @@ import { Add, Remove } from "@material-ui/icons"
 import styled from 'styled-components'
 import { useNavigate } from "react-router-dom"
 
-// import { loadStripe } from '@stripe/stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 
 import { useCart } from "../context/cart-store"
 import { useAuth } from "../context/auth-store"
@@ -14,15 +14,15 @@ import { Button } from "../components/button"
 import Correios from "node-correios";
 
 
-// let stripePromise;
+let stripePromise;
 
-// const getStripe = () => {
-//   if (!stripePromise) {
-//     stripePromise = loadStripe("pk_test_51JBlYRL2PaVveUDb3toqXDpVlHiBr5TEospTxhqKvFstqUiLPZWkv4IRyDcA3yP9PQfPOuyyYuIqgvdVpM1gTdnl00X41b223d");
-//   }
+const getStripe = () => {
+  if (!stripePromise) {
+    stripePromise = loadStripe("pk_test_51JBlYRL2PaVveUDb3toqXDpVlHiBr5TEospTxhqKvFstqUiLPZWkv4IRyDcA3yP9PQfPOuyyYuIqgvdVpM1gTdnl00X41b223d");
+  }
 
-//   return stripePromise;
-// };
+  return stripePromise;
+};
 const Container = styled.div``
 
 const Wrapper = styled.div`
@@ -263,20 +263,20 @@ const Cart = () => {
             })
         })
 
-        // const checkoutOptions = {
-        //     lineItems,
-        //     mode: "payment",
-        //     successUrl: `${window.location.origin}/success?userId=${user.id}`,
-        //     cancelUrl: `${window.location.origin}/checkout`
-        // };
+        const checkoutOptions = {
+            lineItems,
+            mode: "payment",
+            successUrl: `${window.location.origin}/success?userId=${user.id}`,
+            cancelUrl: `${window.location.origin}/checkout`
+        };
 
-        // const stripe = await getStripe();
-        // const { error } = await stripe.redirectToCheckout(checkoutOptions);
+        const stripe = await getStripe();
+        const { error } = await stripe.redirectToCheckout(checkoutOptions);
         
-        // if(error) {
-        //     console.log("Stripe checkout error", error);
-        //     return
-        // }
+        if(error) {
+            console.log("Stripe checkout error", error);
+            return
+        }
 
         emptyCart({})
         

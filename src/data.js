@@ -153,7 +153,7 @@ export const newProducts = [
         img: "https://eurosport.com.mt/images/thumbs/0163601_nmd_v3-shoes_550.png",
         brandId: 1,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
     {
         id: 7,
@@ -164,7 +164,7 @@ export const newProducts = [
         img: "https://www.thenextsole.com/storage/images/GW4358.png",
         brandId: 1,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
 
     {
@@ -176,7 +176,7 @@ export const newProducts = [
         img: "https://www.courir.es/on/demandware.static/-/Sites-master-catalog-courir/default/dwc44aeaed/images/hi-res/001493080_101.png",
         brandId: 1,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
     {
         id: 11,
@@ -187,7 +187,7 @@ export const newProducts = [
         img: "https://www.thenextsole.com/storage/images/S79112.png",
         brandId: 1,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
 
     {
@@ -199,7 +199,7 @@ export const newProducts = [
         img: "https://www.soleretriever.com/_next/image?url=https%3A%2F%2Fsoleretriever.s3.amazonaws.com%2F702b2611-a855-4aaf-b03a-1883c6c9c759.png&w=1200&q=75",
         brandId: 2,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
         
     },
     {
@@ -211,7 +211,7 @@ export const newProducts = [
         img: "https://images.stockx.com/images/Nike-Vaporwaffle-sacai-Villain-Red-Neptune-Green.png?fit=fillbg=FFFFFFw=1200h=857fm=webpauto=compressdpr=2trim=colorupdated_at=1607102901q=75",
         brandId: 2,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
         
     },
     {
@@ -223,7 +223,7 @@ export const newProducts = [
         img: "https://media.soleretriever.com/ae5af0be-8be7-4f1f-9015-9664a6fbd555.png",
         brandId: 2,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
         
     },
     {
@@ -235,7 +235,7 @@ export const newProducts = [
         img: "https://media.soleretriever.com/ecd65233-4b6a-4cec-a06b-b5d697cf8735.png",
         brandId: 2,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
         
     },
     {
@@ -247,7 +247,7 @@ export const newProducts = [
         img: "https://image.goat.com/1000/attachments/product_template_pictures/images/072/332/157/original/878608_00.png.png",
         brandId: 2,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
         
     },
     
@@ -260,7 +260,7 @@ export const newProducts = [
         img: "https://www.soleretriever.com/_next/image?url=https%3A%2F%2Fmedia.soleretriever.com%2F250cbf0a-077f-41cd-99ce-d47222e76c6a.png&w=1200&q=75",
         brandId: 2,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
         
     },
     {
@@ -272,7 +272,7 @@ export const newProducts = [
         img: "https://image.goat.com/1000/attachments/product_template_pictures/images/055/222/887/original/721858_00.png.png",
         brandId: 2,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
     {
         id: 31,
@@ -283,7 +283,7 @@ export const newProducts = [
         img: "https://cdn.sneakersquad.nl/uploads/sneakers/DD0587-141.png?auto=compress%2Cformat&h=400&ixlib=php-3.3.1&trim=auto&trim-sd=1&w=1000",
         brandId: 3,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
     {
         id: 32,
@@ -294,7 +294,7 @@ export const newProducts = [
         img: "https://d2r9epyceweg5n.cloudfront.net/stores/002/314/448/products/398614_111-png1-5b1d863f5cc23ad96f16595804123178-1024-1024.png",
         brandId: 3,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
     {
         id: 33,
@@ -305,7 +305,7 @@ export const newProducts = [
         img: "https://images.tcdn.com.br/img/img_prod/938519/tenis_air_jordan_4_retro_white_oreo_2587_1_bfae5f7cea7510e3612e383c1b25c775_20210812081815.png",
         brandId: 3,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
     {
         id: 34,
@@ -316,7 +316,7 @@ export const newProducts = [
         img: "https://image.goat.com/transform/v1/attachments/product_template_pictures/images/000/036/055/original/487524_070.png.png?action=crop&width=750",
         brandId: 3,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
     
     {
@@ -328,7 +328,7 @@ export const newProducts = [
         img: "https://image.goat.com/transform/v1/attachments/product_template_pictures/images/079/300/673/original/484178_00.png.png?action=crop&width=750",
         brandId: 3,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },    
     {
         id: 35,
@@ -339,7 +339,7 @@ export const newProducts = [
         img: "https://images.tcdn.com.br/img/img_prod/938519/tenis_air_jordan_13_retro_playoff_2011_2913_1_f77d04a8eac964cb366c331565ca90d7_20210812081825.png",
         brandId: 3,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },    
     {
         id: 36,
@@ -350,7 +350,7 @@ export const newProducts = [
         img: "https://image.goat.com/transform/v1/attachments/product_template_pictures/images/001/965/999/original/543390_008.png.png?action=crop&width=750",
         brandId: 3,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },    
     {
         id: 37,
@@ -361,7 +361,7 @@ export const newProducts = [
         img: "https://images.tcdn.com.br/img/img_prod/938519/tenis_air_jordan_1_high_zoom_comfort_olive_aura_3127_1_f255764071b6db8aeca124455477f590.png",
         brandId: 3,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },    
     {
         id: 38,
@@ -372,7 +372,7 @@ export const newProducts = [
         img: "https://images.tcdn.com.br/img/img_prod/938519/tenis_jordan_legacy_312_low_tech_grey_cement_1885_1_f1c46957903d06178e3e7e99a8089729_20210812081459.png",
         brandId: 3,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },    
     {
         id: 39,
@@ -383,7 +383,7 @@ export const newProducts = [
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw5aO7QA55LNVNRi6DTjX5rL3JB6hEKvi5MW4CqaoNCxbdn3yI91V7I6Ay10oMtahpJXM&usqp=CAU",
         brandId: 3,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
     {
         id: 40,
@@ -394,7 +394,7 @@ export const newProducts = [
         img: "https://images.tcdn.com.br/img/img_prod/938519/tenis_air_jordan_1_low_island_green_1589_1_15f915b5df447bd3739da849f7ddd2cd_20210812081446.png",
         brandId: 3,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     }, 
     {
         id: 41,
@@ -405,7 +405,7 @@ export const newProducts = [
         img: "https://5.kixify.com/sites/default/files/imagecache/product_full/product/2021/11/12/p_33471126_192022866_526021.png",
         brandId: 3,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
     {
         id: 42,
@@ -416,7 +416,7 @@ export const newProducts = [
         img: "https://www.thenextsole.com/storage/images/BB550ALE.png",
         brandId: 4,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
     {
         id: 43,
@@ -427,7 +427,7 @@ export const newProducts = [
         img: "https://cdn.sneakerbaron.nl/uploads/2021/02/10015655/new-balance-991-greynavy-m991sgn-55-700x343.png",
         brandId: 4,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
     {
         id: 44,
@@ -438,7 +438,7 @@ export const newProducts = [
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqrSzH42nTOdCpiZ-CEphdSm1F0X5oAKSiMiTMXLBlnerZ1CXT-CWROiYYMOPZN3tsxNY&usqp=CAU",
         brandId: 4,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
     {
         id: 45,
@@ -449,7 +449,7 @@ export const newProducts = [
         img: "https://image.goat.com/transform/v1/attachments/product_template_pictures/images/070/334/300/original/919958_00.png.png?action=crop&width=750",
         brandId: 4,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
     {
         id: 46,
@@ -460,7 +460,7 @@ export const newProducts = [
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ797sLu0Z9RxYLehYIHwQo9i0wTMhfkPnb9iWqDBLIhhFciV227LVcDqBrhUVww0kuxmg&usqp=CAU",
         brandId: 4,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
     {
         id: 47,
@@ -471,7 +471,7 @@ export const newProducts = [
         img: "https://www.pricerunner.com/product/1200x630/3006955013/New-Balance-9060.jpg",
         brandId: 4,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
     {
         id: 48,
@@ -482,7 +482,7 @@ export const newProducts = [
         img: "https://cdn.sneakerbaron.nl/uploads/2022/05/17032208/New-Balance-KAWHI-2-Ocean-Blue-Orange-BBKLSSD2-400x217.png",
         brandId: 4,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
     {
         id: 49,
@@ -493,7 +493,7 @@ export const newProducts = [
         img: "https://www.rodrigoroehniss.com.br/wp-content/uploads/2021/06/RC_ELITE_V2_ABERTURA_ARTIGO-removebg-preview.png",
         brandId: 4,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
     {
         id: 50,
@@ -504,7 +504,7 @@ export const newProducts = [
         img: "https://image.goat.com/transform/v1/attachments/product_template_pictures/images/078/421/186/original/MRCELNY3.png.png?action=crop&width=750",
         brandId: 4,
         stock: 20,
-        paymentUrl: "price_1KQeMdL2PaVveUDbWETLUMdl"
+        paymentUrl: "price_1MDubJL2PaVveUDbh14s1PJr"
     },
 ]
 
