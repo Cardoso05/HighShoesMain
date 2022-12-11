@@ -4,15 +4,6 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 
 import 'react-loading-skeleton/dist/skeleton.css'
 
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Cart from "./pages/Cart";
-import Perfil from "./pages/Perfil";
-import Brands from "./pages/brands";
-import Brand from "./pages/brand";
-import About from "./pages/about";
-import Success from "./pages/success";
-
 import NotFound from "./pages/Not-found"
 
 import HeaderSkeleton from "./components/header/skeleton"
@@ -21,6 +12,15 @@ import FooterSkeleton from "./components/footer/skeleton"
 import SkeletonHome from "./pages/home/layout";
 import SkeletonProduct from "./pages/product/layout";
 import SkeletonProducts from "./pages/products/layout";
+
+const Login = lazy(() => import("./pages/Login"))
+const Register = lazy(() => import("./pages/Register"))
+const Cart = lazy(() => import("./pages/Cart"))
+const Perfil = lazy(() => import("./pages/Perfil"))
+const Brands = lazy(() => import("./pages/brands"))
+const Brand = lazy(() => import("./pages/brand"))
+const About = lazy(() => import("./pages/about"))
+const Success = lazy(() => import("./pages/success"))
 
 const Header = lazy(() => import("./components/header"))
 const Footer = lazy(() => import("./components/footer"))
