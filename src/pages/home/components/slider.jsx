@@ -55,11 +55,11 @@ export const Slider = () =>{
         }}
 
         itemsToShow={1}
-        speed={400}
+        speed={200}
       >
        {sliderItems.map(({ id, img }) => (
             <img src={img} alt="" key={id} style={{width: "600px",
-            height: "auto"}}/>
+            height: "auto", paddingTop: "70px"}}/>
         ))}
         
       </Carousel>
