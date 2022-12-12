@@ -36,7 +36,7 @@ const Sidebar = styled.aside`
   gap: 60px;
 
   width: 280px;
-  background: #000;
+  background: #1a1a1a;
 `
 
 const Filters = styled.section`
@@ -64,7 +64,7 @@ const CustomSelect = styled.details`
     width: 100%;
 
     color: #fff;
-    background: #000;
+    background: #1a1a1a;
 
     border-bottom: 1px solid #fff;
 
@@ -89,7 +89,7 @@ const CustomSelect = styled.details`
   .content {
     padding-top: 8px;
     color: #fff;
-    background-color: #000;
+    background-color: #1a1a1a;
 
     display: flex;
     align-items: flex-start;
