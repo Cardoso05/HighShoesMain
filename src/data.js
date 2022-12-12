@@ -71,7 +71,7 @@ export const footer_sections = [
             },
             {
                 name: "Termos",
-                href: "termos"
+                href: "/termos"
             }
         ]
     }

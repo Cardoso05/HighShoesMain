@@ -11,6 +11,7 @@ import Perfil from "./pages/Perfil";
 import Brands from "./pages/brands";
 import Brand from "./pages/brand";
 import About from "./pages/about";
+import Terms from "./pages/terms";
 import Success from "./pages/success";
 
 import NotFound from "./pages/Not-found"
@@ -54,6 +55,8 @@ export const Router = () => {
         <Route path="/marcas/:slug" element={<Brand />} />
 
         <Route path="/sobre" element={<About />} />
+        
+        <Route path="/termos" element={<Terms />} />
 
         <Route path="/produtos">
           <Route path="/produtos" element={
