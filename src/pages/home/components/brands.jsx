@@ -28,7 +28,9 @@ export const Brands = ({ brands, loading = true }) => {
           width: "100%",
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between"
+          justifyContent: "space-between",
+          flexWrap: "wrap",
+          rowGap: "50px",
         }}
       >
         {brands.map(({ id, img, name }) => (

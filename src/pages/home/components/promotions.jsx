@@ -38,7 +38,8 @@ export const Promotions = ({ loading = true }) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          gap: "30px"
+          rowGap: "30px",
+          gap: "10px"
         }}
       >
         <li style={{ width: "50%" }}>

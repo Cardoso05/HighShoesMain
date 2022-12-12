@@ -41,6 +41,7 @@ const Product = styled.div`
 const ProductDetail = styled.div`
     flex: 2;
     display: flex;
+    flex-wrap: wrap;
 `
 
 const Image = styled.img`
@@ -87,6 +88,7 @@ const ProductPrice = styled.div`
 
 const Bottom = styled.div`
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 `
 

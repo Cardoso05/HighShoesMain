@@ -28,13 +28,15 @@ const Image = styled(RouterLink)`
 
 export const Products = ({ products, loading = true }) => {
   return (
-    <Section oading={loading}>
+    <Section loading={loading}>
       <ul
         style={{
           width: "100%",
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between"
+          justifyContent: "space-between",
+          flexWrap: "wrap",
+          rowGap: "50px"
         }}
       >
         {products.map(({ id, img, name }) => (

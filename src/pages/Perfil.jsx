@@ -31,6 +31,8 @@ const Title = styled.section`
 const Details = styled.section`
   display: flex;
   gap: 50px;
+  flex-wrap: wrap;
+  row-gap:50px;
 `
 
 const Section = styled.div`
@@ -86,7 +88,6 @@ const InputsContainer = styled.div`
 
 const InputWrapper = styled.label`
   width: 100%;
-
   display: flex;
   flex-direction: column;
   gap: 10px;

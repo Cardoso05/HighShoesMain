@@ -19,9 +19,10 @@ const Container = styled.section`
     margin: auto;
 
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
-
+    row-gap: 50px;
     padding: 40px;
 
     background: #1A1A1A;
@@ -32,6 +33,7 @@ const Column = styled.section`
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
+    flex-wrap: wrap;
 `
 
 const Title = styled.h3`

@@ -10,7 +10,9 @@ export const Novidades = ({ products, loading = true }) => {
           width: "100%",
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between"
+          justifyContent: "space-between",
+          flexWrap: "wrap",
+          rowGap: "50px"
         }}
       >
         {products.map(({ id, ...props }) => (
