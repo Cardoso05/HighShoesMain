@@ -545,29 +545,19 @@ export const faq = [
     },
     {
         id: 1,
-        title: "Em quantos dias meus pedidos chegam?",
-        description: "Nosso frete entrega em até 15 dias."
+        title: "O valor final da compra pode ser parcelado?",
+        description: "Sim, em até 12x."
     },
     {
         id: 2,
-        title: "Em quantos dias meus pedidos chegam?",
-        description: "Nosso frete entrega em até 15 dias."
+        title: "Há limite de quantidade na compra de algum item?",
+        description: "O limite para a compra de qualquer item depende da disponibilidade do mesmo no estoque."
     },
     {
         id: 3,
-        title: "Em quantos dias meus pedidos chegam?",
-        description: "Nosso frete entrega em até 15 dias."
-    },
-    {
-        id: 4,
-        title: "Em quantos dias meus pedidos chegam?",
-        description: "Nosso frete entrega em até 15 dias."
-    },
-    {
-        id: 5,
-        title: "Em quantos dias meus pedidos chegam?",
-        description: "Nosso frete entrega em até 15 dias."
-    },
+        title: "Os produtos vendidos na HighSHoes são orignais/oficiais ?",
+        description: "Sim! Todos os produtos comercializados pela HighShoes são adiquiridos diretamente dos fabricantes e seus distribuidores oficiais."
+    }
 ]
 export const integrantes1 = [
     {
