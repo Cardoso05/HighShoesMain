@@ -1,6 +1,5 @@
 import styled from "styled-components"
-import {integrantes1} from "../data"
-import {integrantes2} from "../data"
+
 const Banner = styled.section`
   width: 100%;
   height: 200px;
@@ -23,8 +22,7 @@ const Banner = styled.section`
 const Wrapper = styled.main`
     width: 100%
 `
-const Sobre = styled.div`
-`
+
 const Container = styled.section`
   max-width: 991px;
   width: 100%;

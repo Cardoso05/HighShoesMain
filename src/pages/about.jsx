@@ -23,8 +23,7 @@ const Banner = styled.section`
 const Wrapper = styled.main`
     width: 100%
 `
-const Sobre = styled.div`
-`
+
 const Container = styled.section`
   max-width: 991px;
   width: 100%;
