@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useState } from "react"
-import { hash, compare } from "bcryptjs"
+import { hash, hashSync, compare } from "bcryptjs"
 import { sign, verify } from "jsonwebtoken"
 
 const AuthStore = createContext({})
@@ -11,16 +11,18 @@ export const useAuth = () => {
 const users = new Map()
 
 users.set("312324wedddfwerere", {
-  name: "vitor",
+  name: "matheus",
   id: "312324wedddfwerere",
   email: "vitor@gmail.com",
   password: "$2a$10$lLObXqsA7rCfGVmQJcO/H.aTjNm0EtNHqDUsRTkdYQY9Npe6CEilq",
   details: {
-    cep: "04689160",
-    street: "Rua Quararibéia",
-    bairro: "Vila Isa"
+    cep: "04557001",
+    street: "Rua Texas",
+    bairro: "Brooklin Paulista"
   }
 })
+
+console.log(hashSync("123"));
 
 export const AuthStoreProvider = ({ children, private_key, storage_key = "@highshoes" }) => {
   const [signedIn, setSignedIn] = useState(false)
