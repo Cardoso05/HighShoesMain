@@ -569,3 +569,39 @@ export const faq = [
         description: "Nosso frete entrega em até 15 dias."
     },
 ]
+export const integrantes1 = [
+    {
+        id: 1,
+        name: "Matheus Cardoso",
+        funcao: "Back-End"
+    },
+    {
+        id: 2,
+        name: "Guilherme Nobre",
+        funcao: "Design"
+    },
+    {
+        id: 3,
+        name: "Carla Brito",
+        funcao: "Back-End"
+    }
+
+]
+export const integrantes2 = [
+    {
+        id: 1,
+        name: "Gabriel Santos",
+        funcao: "Front-End"
+    },
+    {
+        id: 2,
+        name: "Luiza Souza",
+        funcao: "Front-End"
+    },
+    {
+        id: 3,
+        name: "Geovana",
+        funcao: "Produtora de Conteudo"
+    }
+
+]

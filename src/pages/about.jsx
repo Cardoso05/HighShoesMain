@@ -1,5 +1,6 @@
 import styled from "styled-components"
-
+import {integrantes1} from "../data"
+import {integrantes2} from "../data"
 const Banner = styled.section`
   width: 100%;
   height: 200px;
@@ -22,18 +23,37 @@ const Banner = styled.section`
 const Wrapper = styled.main`
     width: 100%
 `
-
+const Sobre = styled.div`
+`
 const Container = styled.section`
-max-width: 991px;
-width: 100%;
-margin: 0 auto;
-
+  max-width: 991px;
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: column;
   display: flex;
   padding: 40px;
   gap: 50px;
 `
+const IntegrantesTcc = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`
+const Integrante = styled.div`
+  flex: 1 1 ;
+  position: relative;
+`
+const Integrantes = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+const TitleIntegrante = styled.h3``
 
+const Description = styled.p``
 
+const Title = styled.h1`
+  text-align: center;
+`
 export const Layout = () => {
   return (
     <>
@@ -42,9 +62,41 @@ export const Layout = () => {
       </Banner>
       <Wrapper>
         <Container>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed purus facilisis, mattis augue quis, tristique leo. Morbi luctus ligula a diam dictum aliquet. Vivamus ut lorem neque. Pellentesque mi urna, porttitor eu consequat eget, varius eget elit. Vivamus sit amet justo eget est maximus auctor eu eu nibh. Aliquam risus magna, elementum sit amet viverra at, pretium vitae lectus. Donec in scelerisque lacus. Maecenas semper vulputate interdum. Nullam fringilla iaculis metus vel feugiat.
+        <Title>História</Title>  
+            <p>LA HighShoes é um E-commerce que visa a venda e a maior acessibilidade de tênis exclusivos.
+            Criado por um grupo de 6 estudantes, a HighShoes veio para quebrar as barreiras que muitos encontram ao procurarem por tênis mais exclusivos, como o alto valor de muitos produtos. Aqui você vai se deparar com preços que caibam no seu bolso e um atendimento baseado na ética para uma melhor experiência.</p>
 
-Integer nec egestas magna. Proin tincidunt viverra magna ac pulvinar. Aliquam urna sapien, sagittis quis arcu at, dictum rhoncus arcu. Cras et ultricies nibh. Sed feugiat dui euismod sem fringilla egestas. Donec nisi nunc, dictum nec diam id, pretium porta massa. Vivamus in sapien vel purus tristique aliquam. Vestibulum condimentum, libero ac porttitor egestas, dolor lectus eleifend velit, id egestas est neque id mauris. Nullam augue purus, egestas eu felis id, sodales finibus lectus. Integer euismod vehicula sodales. Vivamus in mi a nisi ultricies ornare. Maecenas a nulla at libero accumsan aliquet. Aenean pellentesque leo et enim pretium sagittis.</p>
+            <Title>Integrantes</Title>  
+            <Integrantes>
+            <IntegrantesTcc>
+              {integrantes1.map(({ id, name,funcao }) => (
+                  <Integrante key={id}>
+                    <TitleIntegrante>
+                      {name}
+                    </TitleIntegrante>
+                    
+                    <Description>
+                      {funcao}
+                    </Description>
+
+                  </Integrante>
+              ))}
+            </IntegrantesTcc>
+            <IntegrantesTcc>
+              {integrantes2.map(({ id, name,funcao }) => (
+                  <Integrante key={id}>
+                    <TitleIntegrante>
+                      {name}
+                    </TitleIntegrante>
+                    
+                    <Description>
+                      {funcao}
+                    </Description>
+
+                  </Integrante>
+              ))}
+            </IntegrantesTcc>
+          </Integrantes>
         </Container>
       </Wrapper>
     </>
