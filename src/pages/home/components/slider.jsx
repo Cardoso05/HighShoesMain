@@ -58,7 +58,7 @@ export const Slider = () =>{
         speed={400}
       >
        {sliderItems.map(({ id, img }) => (
-            <img src={img} alt="" key={id} style={{width: "400px",
+            <img src={img} alt="" key={id} style={{width: "600px",
             height: "auto"}}/>
         ))}
         

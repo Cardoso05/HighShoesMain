@@ -46,7 +46,7 @@ export const Promotions = ({ loading = true }) => {
           {loading ? (
             <Skeleton width={"100%"} height={100} />
           ) : (
-            <Card to={"/produtos/desconto"}>
+            <Card to={"/produtos"}>
               <strong> <i> Calçado usado por desconto </i></strong>
 
               <Button>
@@ -60,7 +60,7 @@ export const Promotions = ({ loading = true }) => {
           {loading ? (
             <Skeleton width={"100%"} height={100} />
           ) : (
-            <Card to={"/produtos/desconto"}>
+            <Card to={"/produtos"}>
               <strong> <i> Calçado usado por desconto </i></strong>
 
               <Button>
