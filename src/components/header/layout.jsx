@@ -2,6 +2,8 @@ import styled from "styled-components"
 import { Link as RouterLink, useLocation } from "react-router-dom"
 import { useCart } from "../../context/cart-store"
 
+import {mobile} from "../../responsive"
+import {tablet} from "../../responsive"
 import Logo from "./highshoes-logo.png"
 import BrazilFlag from "./flags/brazil.png"
 
@@ -48,6 +50,18 @@ const Actions = styled.section`
   align-items: center;
   justify-content: center;
   gap: 20px;
+  ${
+    mobile({
+      display:"none"
+    })
+    
+  }
+
+  ${
+    tablet({
+      display:"none"
+    })
+  }
 `
 
 const IconLink = styled(RouterLink)`
