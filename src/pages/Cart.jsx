@@ -268,7 +268,7 @@ const Cart = () => {
         const checkoutOptions = {
             lineItems,
             mode: "payment",
-            successUrl: `${window.location.origin}/success?userId=${user.id}`,
+            successUrl: `${window.location.origin}/#/success?userId=${user.id}`,
             cancelUrl: `${window.location.origin}/checkout`
         };
 

@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react"
 import { ErrorBoundary } from "react-error-boundary"
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import { HashRouter, Routes, Route, Link } from "react-router-dom"
 
 import 'react-loading-skeleton/dist/skeleton.css'
 
@@ -33,7 +33,7 @@ const Products = lazy(() => import("./pages/products"))
 
 export const Router = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Suspense fallback={<HeaderSkeleton />}>
         <Header />
       </Suspense>
@@ -88,6 +88,6 @@ export const Router = () => {
       <Suspense fallback={<FooterSkeleton />}>
         <Footer />
       </Suspense>
-    </BrowserRouter>
+    </HashRouter>
   )
 };

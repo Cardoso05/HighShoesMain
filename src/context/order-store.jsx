@@ -11,7 +11,16 @@ export const useOrders = () => {
 
 export const OrderStoreProvider = ({ children }) => {
   const { user } = useAuth()
-  const [orders, setOrders] = useState([])
+  const [orders, setOrders] = useState([
+    {
+      "id": "x3zKi-O1va",
+      "name": "SB Dunk Low Neckface",
+      "date": 1670849545943,
+      "status": "Aguardando",
+      "price": 1199.99,
+      "userId": "312324wedddfwerere"
+    }
+  ])
 
   const addOrder = ({ name, price, userId }) => {
     const id = nanoid(10)
