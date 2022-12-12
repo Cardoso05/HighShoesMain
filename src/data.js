@@ -58,10 +58,6 @@ export const footer_sections = [
         title: "Ajuda",
         links: [
             {
-                name: "Serviços",
-                href: "/servicos"
-            },
-            {
                 name: "Suporte whatsapp",
                 href: "/whatsapp"
             },

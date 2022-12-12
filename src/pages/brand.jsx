@@ -7,22 +7,22 @@ import { brands, newProducts as products } from "../data"
 import { slugify } from "../utils/slugify"
 
 const Banner = styled.section`
-  width: 100%;
-  height: 200px;
+width: 100%;
+height: 200px;
 
-  display: grid;
-  place-items: center;
+display: grid;
+place-items: center;
 
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(${props => props.backgroundImg});
-  background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+background-image: url(https://images.unsplash.com/photo-1499346030926-9a72daac6c63?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&w=1600&q=100);
+background-position: center;
 
-  color: #000;
+color: #000;
 
-  h1 {
-    font-size: 35px;
-  }
+h1 {
+  font-size: 35px;
+}
 `
 
 const Wrapper = styled.main`
