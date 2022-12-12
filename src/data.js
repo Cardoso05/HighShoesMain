@@ -81,23 +81,17 @@ export const sliderItems = [
     {
         id: 1,
         img: slider1,
-        title: "SUMMER SALE",
-        desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF NEW ARRIVALS",
-        bg: "f5fafd",
+        link: "#"
     },
     {
         id: 2,
         img: slider2,
-        title: "AUTUMN COLLECTION",
-        desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF NEW ARRIVALS",
-        bg: "fcf1ed",
+        link: "#"
     },
     {
         id: 3,
         img: slider3,
-        title: "SUMMER SALE",
-        desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF NEW ARRIVALS",
-        bg: "f5fafd",
+        link: "#"
     },
 ]
 

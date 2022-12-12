@@ -5,6 +5,7 @@ import { Brands } from "./components/brands"
 import { Promotions } from "./components/promotions"
 import { Products } from "./components/products"
 import { FAQ } from "./components/faq"
+import { Slider } from "./components/slider"
 
 const Container = styled.main`
   max-width: 898px;
@@ -24,6 +25,7 @@ const Container = styled.main`
 export const Layout = ({ loading = true, newProducts = [], brands = [], faq = [] }) => {
   return (
     <Container>
+      <Slider/>
       <Novidades loading={loading} products={newProducts.slice(0, 4)} />
       <Brands loading={loading} brands={brands} />
       <Promotions loading={loading} />
